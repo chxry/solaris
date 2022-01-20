@@ -1,0 +1,23 @@
+{
+  "name": "solaris",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html",
+    "prettier": "prettier --write src"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.3",
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.2.1",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.15"
+  }
+}
