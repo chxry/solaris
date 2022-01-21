@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./src/*.tsx"],
+    content: ["./src/**/*.tsx"],
     theme: {
       colors: {
         "polar": {
@@ -13,9 +13,22 @@ module.exports = {
           "1": "#E5E9F0",
           "2": "#ECEFF4",
         },
+        "frost": {
+          "0": "#8FBCBB",
+          "1": "#88C0D0",
+          "2": "#81A1C1",
+          "3": "#5E81AC"
+        },
+        "black": "#000"
       },
       fontFamily: {
         "body": ["JetBrains Mono", "sans-serif"],
+      },
+      extend: {
+        spacing: {
+          "128": "32rem",
+          "192": "48rem"
+        }
       }
     },
     plugins: [],

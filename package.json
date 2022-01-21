@@ -1,11 +1,15 @@
 {
-  "name": "solaris",
+  "name": "Solaris",
+  "version": "v0.1",
+  "repository": "https://github.com/chxry/sun",
+  "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
     "prod": "parcel build src/index.html",
     "prettier": "prettier --write src"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
