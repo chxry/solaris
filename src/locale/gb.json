@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "welcome": "the worlds most advanced calculator",
+    "404": {
+      "not found": "Page not found",
+      "go home": "Go Home"
+    },
+    "about": {
+      "about": "About ",
+      "info": "TODO",
+      "exit": "Click anywhere to exit."
+    },
+    "calculator": {
+      "latitude": "Latitude",
+      "latitude desc": "The latitude of the your building.",
+      "shading": "Shading",
+      "shading desc": "How much cover obstructs your roof."
+    },
+    "adjs": {
+      "little": "Very little",
+      "modest": "Modest",
+      "significant": "Significant",
+      "heavy": "Heavy",
+      "full": "Fully Covered"
+    }
+  }
+}

@@ -3340,6 +3340,11 @@ range-parser@1.2.0:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
 
+react-circle-flags@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/react-circle-flags/-/react-circle-flags-0.0.15.tgz#4b69f7b33d8b39475a12d7b18099b511b6e214c2"
+  integrity sha512-RpQj7O3GT5820XttIRovT0OgSytDvxHlskf1cd3uxhAOfDhGT6iaRScdz1IcINLmlsgSWaqJXFSq7tto4VAkcg==
+
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"

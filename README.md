@@ -6,17 +6,14 @@
   ![Contributors](https://img.shields.io/github/contributors/chxry/sun?style=flat-square)
 </h1>
 
-<h3 align="center">
-  Description<br/>
-  <a href="https://chxry.github.io/sun">View Demo</a>
-</h3>
-
-### About The Project
+### About
 about
 
 ### Built With
-* [React.js](https://reactjs.org/)
-* [TailwindCSS](https://tailwindcss.com)
+- [React.js](https://reactjs.org)
+- [TailwindCSS](https://tailwindcss.com)
+- [heroicons](https://heroicons.com)
+- [i18next](https://www.i18next.com/)
 
 ### Roadmap
 - [] 

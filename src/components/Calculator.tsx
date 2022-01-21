@@ -12,9 +12,9 @@ const Calculator = () => {
   return (
     <div className="m-4">
       <Input
-        label={t("latitude")}
+        label={t("calculator.latitude")}
         unit="°"
-        desc={t("latitude_desc")}
+        desc={t("calculator.latitude desc")}
         value={latitude}
         onChange={(e) => {
           let n = parseFloat(e.target.value);
@@ -22,20 +22,20 @@ const Calculator = () => {
         }}
       />
       <Input
-        label={t("shading")}
+        label={t("calculator.shading")}
         unit="%"
-        desc={t("shading_desc")}
+        desc={t("calculator.shading desc")}
         value={shading}
         describe={() =>
           shading < 20
-            ? t("little")
+            ? t("adjs.little")
             : shading < 60
-            ? t("modest")
+            ? t("adjs.modest")
             : shading < 80
-            ? t("significant")
+            ? t("adjs.significant")
             : shading !== 100
-            ? t("heavy")
-            : t("full")
+            ? t("adjs.heavy")
+            : t("adjs.full")
         }
         onChange={(e) => {
           let n = parseFloat(e.target.value);
