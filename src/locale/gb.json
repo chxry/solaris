@@ -11,12 +11,18 @@
       "exit": "Click anywhere to exit."
     },
     "calculator": {
-      "latitude": "Latitude",
-      "latitude desc": "The latitude of your building.",
-      "shading": "Shading",
-      "shading desc": "How much cover obstructs your roof.",
-      "direction": "Direction",
-      "direction desc": "What is the direction of your roof."
+      "project": {
+        "title": "Project Setup",
+        "latitude": "Latitude",
+        "latitude desc": "The latitude of your building.",
+        "shading": "Shading",
+        "shading desc": "How much cover obstructs your roof.",
+        "direction": "Direction",
+        "direction desc": "Direction of your roof."
+      },
+      "roof": {
+        "title": "Roof Setup"
+      }
     },
     "adjs": {
       "little": "Very little",
@@ -24,6 +30,19 @@
       "significant": "Significant",
       "heavy": "Heavy",
       "full": "Fully Covered"
+    },
+    "geo": {
+      "northern": "Northern",
+      "southern": "Southern",
+      "equator": "Equator",
+      "n": "North",
+      "ne": "North East",
+      "e": "East",
+      "se": "South East",
+      "s": "South",
+      "sw": "South West",
+      "w": "West",
+      "nw": "North West"
     }
   }
 }

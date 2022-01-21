@@ -8,9 +8,9 @@ const Input = ({
   describe,
   onChange,
 }: {
-  label: string;
+  label?: string;
   unit: string;
-  desc: string;
+  desc?: string;
   describe?: () => string;
   value: any;
 
@@ -18,8 +18,8 @@ const Input = ({
 }) => {
   return (
     <>
-      <span className="flex items-center flex-wrap text-xl mt-2">
-        <label className="mr-4 font-bold">{label}:</label>
+      <span className="flex items-center flex-wrap text-xl">
+        {label && <label className="mr-4 font-bold">{label}:</label>}
         <input
           type="number"
           className="p-1 bg-polar-2 rounded-l-md focus:outline-none transition-colors focus:bg-polar-3 w-24"
@@ -29,7 +29,7 @@ const Input = ({
         <div className="p-1 bg-polar-0 rounded-r-md mr-2">{unit}</div>
         {describe && <p className="text-lg">{describe()}</p>}
       </span>
-      <p className="mb-2">{desc}</p>
+      {desc && <p className="mb-2">{desc}</p>}
     </>
   );
 };

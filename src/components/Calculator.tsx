@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { PlusIcon } from "@heroicons/react/solid";
 
 import { Input } from ".";
 
@@ -7,25 +8,39 @@ const Calculator = () => {
   const { t } = useTranslation();
   const [sections, setSections] = useState([]);
   const [latitude, setLatitude] = useState(0);
-  const [shading, setShading] = useState(0);
+  const [shading, setShading] = useState(20);
   const [direction, setDirection] = useState(0);
+  let sectionDefault = {
+    width: 1000,
+    height: 1000,
+    gradient: 30,
+  };
+  const [currentSection, setCurrentSection] = useState(sectionDefault);
 
   return (
     <div className="m-4">
+      <h1 className="text-2xl font-bold">{t("calculator.project.title")}:</h1>
       <Input
-        label={t("calculator.latitude")}
+        label={t("calculator.project.latitude")}
         unit="°"
-        desc={t("calculator.latitude desc")}
+        desc={t("calculator.project.latitude desc")}
         value={latitude}
+        describe={() =>
+          latitude > 0
+            ? t("geo.northern")
+            : latitude < 0
+            ? t("geo.southern")
+            : t("geo.equator")
+        }
         onChange={(e) => {
           let n = parseFloat(e.target.value);
           Math.abs(n) <= 90 && setLatitude(n);
         }}
       />
       <Input
-        label={t("calculator.shading")}
+        label={t("calculator.project.shading")}
         unit="%"
-        desc={t("calculator.shading desc")}
+        desc={t("calculator.project.shading desc")}
         value={shading}
         describe={() =>
           shading < 20
@@ -44,16 +59,88 @@ const Calculator = () => {
         }}
       />
       <Input
-        label={t("calculator.direction")}
+        label={t("calculator.project.direction")}
         unit="°"
-        desc={t("calculator.direction desc")}
+        desc={t("calculator.project.direction desc")}
         value={direction}
+        describe={() => {
+          let directions = [
+            t("geo.n"),
+            t("geo.ne"),
+            t("geo.e"),
+            t("geo.se"),
+            t("geo.s"),
+            t("geo.sw"),
+            t("geo.w"),
+            t("geo.nw"),
+          ];
+          return directions[Math.round(direction / 45) % 8];
+        }}
         onChange={(e) => {
           let n = parseFloat(e.target.value);
           n >= 0 && n <= 360 && setDirection(n);
         }}
       />
-      
+      <h1 className="text-2xl font-bold">{t("calculator.roof.title")}:</h1>
+      <div className="bg-polar-3 p-2 rounded-t-md w-256 border-b-2 border-polar-0">
+        <h2 className="font-bold text-xl">Roof Sections:</h2>
+      </div>
+      {sections.map((section, i) => (
+        <div
+          className="w-256 p-2 bg-polar-3 border-b-2 border-polar-0 text-lg"
+          key={i}
+        >
+          <span className="font-bold">{i + 1}: </span>
+          <span className="font-bold">Dimensions: </span>
+          {section.width}×{section.height}mm
+          <span className="font-bold"> - Area:</span>
+          {section.width * section.height}mm²
+          <span className="font-bold"> - Gradient: </span>
+          {section.gradient}°
+        </div>
+      ))}
+      <div className="flex w-256 bg-polar-3 p-2 rounded-b-md">
+        <Input
+          label="Height"
+          unit="mm"
+          value={currentSection.width}
+          onChange={(e) => {
+            let n = parseFloat(e.target.value);
+            n >= 0 && setCurrentSection({ ...currentSection, ...{ width: n } });
+          }}
+        />
+        <Input
+          label="Width"
+          unit="mm"
+          value={currentSection.height}
+          onChange={(e) => {
+            let n = parseFloat(e.target.value);
+            n >= 0 &&
+              setCurrentSection({ ...currentSection, ...{ height: n } });
+          }}
+        />
+        <Input
+          label="Gradient"
+          unit="°"
+          value={currentSection.gradient}
+          onChange={(e) => {
+            let n = parseFloat(e.target.value);
+            n >= 0 &&
+              n <= 90 &&
+              setCurrentSection({ ...currentSection, ...{ gradient: n } });
+          }}
+        />
+        <button
+          className="ml-auto p-1 rounded-md bg-polar-0 font-bold flex items-center transition-colors hover:bg-frost-2"
+          onClick={() => {
+            setSections([...sections, currentSection]);
+            setCurrentSection(sectionDefault);
+          }}
+        >
+          <PlusIcon className="h-6 mr-1" />
+          Add Section
+        </button>
+      </div>
     </div>
   );
 };
