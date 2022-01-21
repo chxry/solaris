@@ -14,7 +14,9 @@
       "latitude": "широта",
       "latitude desc": "широта вашего здания",
       "shading": "затенение",
-      "shading desc": "насколько затенена ваша крыша"
+      "shading desc": "насколько затенена ваша крыша",
+      "direction": "Угол",
+      "direction desc": "What is the direction of your roof."
     },
     "adjs": {
       "little": "очень мало",
