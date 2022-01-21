@@ -83,7 +83,9 @@ const Calculator = () => {
       />
       <h1 className="text-2xl font-bold">{t("calculator.roof.title")}:</h1>
       <div className="bg-polar-3 p-2 rounded-t-md w-256 border-b-2 border-polar-0">
-        <h2 className="font-bold text-xl">{t("calculator.roof.roof sections")}:</h2>
+        <h2 className="font-bold text-xl">
+          {t("calculator.roof.roof sections")}:
+        </h2>
       </div>
       {sections.map((section, i) => (
         <div

@@ -6,15 +6,32 @@
       "go home": "帰る"
     },
     "about": {
-      "about": "ついて ",
+      "title": "ついて ",
       "info": "TODO",
       "exit": "終了するには、任意の場所をクリックします."
     },
     "calculator": {
+      "project": {
+        "title": "プロジェクトの設定",
+        "latitude": "建物の緯度。",
+        "shading": "屋根の影の量。",
+        "direction": "屋根の方向。"
+      },
+      "roof": {
+        "title": "屋根のセットアップ",
+        "roof sections": "屋根のセクション",
+        "add section": "セクションを追加"
+      }
+    },
+    "common": {
       "latitude": "緯度",
-      "latitude desc": "建物の緯度。",
       "shading": "影",
-      "shading desc": "屋根の影の量。"
+      "direction": "方向",
+      "width": "幅",
+      "height": "高さ",
+      "gradient": "勾配",
+      "dimensions": "寸法",
+      "area": "面積"
     },
     "adjs": {
       "little": "ほとんどありません",
@@ -22,6 +39,19 @@
       "significant": "重要",
       "heavy": "大量",
       "full": "完全にカバー"
+    },
+    "geo": {
+      "northern": "北半球",
+      "southern": "南半球",
+      "equator": "赤道",
+      "n": "北",
+      "ne": "北東",
+      "e": "東",
+      "se": "南東",
+      "s": "南",
+      "sw": "南西",
+      "w": "西",
+      "nw": "北西"
     }
   }
 }

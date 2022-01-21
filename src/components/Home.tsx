@@ -18,7 +18,6 @@ const Home = () => {
             The most efficient solar panel calculator
           </h2>
           <button className="rounded-lg bg-frost-2 w-80 h-10 text-2xl hover:bg-frost-1 transition-colors ">
-            
             Start Calculating
           </button>
         </div>
