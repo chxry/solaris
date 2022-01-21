@@ -16,7 +16,7 @@
       "shading": "затенение",
       "shading desc": "насколько затенена ваша крыша",
       "direction": "Угол",
-      "direction desc": "What is the direction of your roof."
+      "direction desc": "на каком угле ваш дом"
     },
     "adjs": {
       "little": "очень мало",
