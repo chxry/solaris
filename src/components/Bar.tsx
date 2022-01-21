@@ -10,7 +10,7 @@ const Bar = () => {
     <>
       <div className="w-full p-2 bg-polar-0 text-xl flex">
         <h1 className="font-bold mr-2">{NAME}</h1>
-        <span className="text-polar-3">{VERSION}</span>
+        <span className="text-polar-3">v{VERSION}</span>
         <InformationCircleIcon
           className="ml-auto w-6 cursor-pointer transition-colors hover:text-frost-2"
           onClick={() => setModalOpen(true)}

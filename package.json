@@ -1,6 +1,6 @@
 {
   "name": "Solaris",
-  "version": "v0.1",
+  "version": "0.1",
   "repository": "https://github.com/chxry/sun",
   "license": "MIT",
   "scripts": {
