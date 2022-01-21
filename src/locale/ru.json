@@ -7,31 +7,31 @@
     },
     "about": {
       "title": "Про",
-      "info": "TODO",
+      "info": "сука заткнись",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "calculator": {
       "project": {
-        "title": "TODO",
+        "title": "Проект",
         "latitude": "широта вашего здания.",
         "shading": "насколько затенена ваша крыша.",
         "direction": "на каком угле ваш дом."
       },
       "roof": {
-        "title": "TODO",
-        "roof sections": "TODO",
-        "add section": "TODO"
+        "title": "сетап крыши",
+        "roof sections": "секцыи крыши",
+        "add section": "добавить секцию"
       }
     },
     "common": {
       "latitude": "широта",
       "shading": "затенение",
       "direction": "Угол",
-      "width": "TODO",
-      "height": "TODO",
-      "gradient": "TODO",
-      "dimensions": "TODO",
-      "area": "TODO"
+      "width": "ширина",
+      "height": "высота",
+      "gradient": "градиент",
+      "dimensions": "размеры",
+      "area": "плошадь"
     },
     "adjs": {
       "little": "очень мало",
@@ -41,17 +41,17 @@
       "full": "Полностью затёмнено"
     },
     "geo": {
-      "northern": "TODO",
-      "southern": "TODO",
-      "equator": "TODO",
-      "n": "TODO",
-      "ne": "TODO",
-      "e": "TODO",
-      "se": "TODO",
-      "s": "TODO",
-      "sw": "TODO",
-      "w": "TODO",
-      "nw": "TODO"
+      "northern": "северная хемисфера",
+      "southern": "южная хемисфера",
+      "equator": "екватор",
+      "n": "север",
+      "ne": "северо-восток",
+      "e": "восток",
+      "se": "юговосток",
+      "s": "юг",
+      "sw": "югозапад",
+      "w": "запад",
+      "nw": "северозапад"
     }
   }
 }
