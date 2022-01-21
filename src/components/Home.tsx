@@ -19,11 +19,19 @@ const Home = () => {
   return (
     <>
       <Section>
-        <img
-          src={image}
-          alt="solar panel on house"
-          className="h-96 mr-12 rounded-xl"
-        />
+        <div className="relative">
+          <img
+            src={image}
+            alt="solar panel on house"
+            className="h-96 mr-12 rounded-xl"
+          />
+          <p className="absolute bottom-0.5 left-1 text-sm opacity-50">
+            {t("attribute photo", {
+              author: "Manny Becerra",
+              platform: "Unsplash",
+            })}
+          </p>
+        </div>
         <div>
           <h1 className="text-6xl font-bold">
             {t("home.welcome to", { name: NAME })}
@@ -31,7 +39,7 @@ const Home = () => {
           <h2 className="text-2xl my-1">{t("home.tagline")}</h2>
           <button
             className="p-2 text-2xl font-bold rounded-lg bg-polar-0 transition-colors hover:bg-frost-2 flex items-center"
-            onClick={() => navigate("/calculator")}
+            onClick={() => navigate("/planner")}
           >
             <CalculatorIcon className="h-8 mr-2" />
             {t("home.start")}

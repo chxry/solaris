@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { useTranslation } from "react-i18next";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Bar, Calculator, NotFound, Home } from "./components";
+import { Bar, Planner, NotFound, Home } from "./components";
 import { NAME, VERSION } from "./config";
 import "./locale";
 
@@ -17,7 +17,7 @@ const App = () => {
           <Bar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/planner" element={<Planner />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,9 +1,10 @@
 {
   "translation": {
+    "attribute photo": "Photo by {{author}} on {{platform}}.",
     "home": {
       "welcome to": "Welcome to {{name}}",
-      "tagline": "The most advanced solar panel calculator.",
-      "start": "Start Calculating"
+      "tagline": "The most advanced solar panel planner.",
+      "start": "Start Planning"
     },
     "404": {
       "not found": "Page not found",
@@ -14,7 +15,7 @@
       "info": "TODO",
       "exit": "Click anywhere to exit."
     },
-    "calculator": {
+    "planner": {
       "project": {
         "title": "Project Setup",
         "latitude": "The latitude of your building.",

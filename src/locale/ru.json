@@ -1,5 +1,6 @@
 {
   "translation": {
+    "attribute photo": "TODO {{author}} {{platform}}.",
     "home": {
       "welcome to": "TODO {{name}}",
       "tagline": "TODO.",
@@ -14,7 +15,7 @@
       "info": "сука заткнись",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
-    "calculator": {
+    "planner": {
       "project": {
         "title": "Проект",
         "latitude": "широта вашего здания.",

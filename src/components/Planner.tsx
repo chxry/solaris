@@ -4,7 +4,7 @@ import { PlusIcon } from "@heroicons/react/solid";
 
 import { Input } from ".";
 
-const Calculator = () => {
+const planner = () => {
   const { t } = useTranslation();
   const [sections, setSections] = useState([]);
   const [latitude, setLatitude] = useState(0);
@@ -19,11 +19,11 @@ const Calculator = () => {
 
   return (
     <div className="m-4">
-      <h1 className="text-2xl font-bold">{t("calculator.project.title")}:</h1>
+      <h1 className="text-2xl font-bold">{t("planner.project.title")}:</h1>
       <Input
         label={t("common.latitude")}
         unit="°"
-        desc={t("calculator.project.latitude")}
+        desc={t("planner.project.latitude")}
         value={latitude}
         describe={() =>
           latitude > 0
@@ -40,7 +40,7 @@ const Calculator = () => {
       <Input
         label={t("common.shading")}
         unit="%"
-        desc={t("calculator.project.shading")}
+        desc={t("planner.project.shading")}
         value={shading}
         describe={() =>
           shading < 20
@@ -61,7 +61,7 @@ const Calculator = () => {
       <Input
         label={t("common.direction")}
         unit="°"
-        desc={t("calculator.project.direction")}
+        desc={t("planner.project.direction")}
         value={direction}
         describe={() => {
           let directions = [
@@ -81,10 +81,10 @@ const Calculator = () => {
           n >= 0 && n <= 360 && setDirection(n);
         }}
       />
-      <h1 className="text-2xl font-bold">{t("calculator.roof.title")}:</h1>
+      <h1 className="text-2xl font-bold">{t("planner.roof.title")}:</h1>
       <div className="bg-polar-3 p-2 rounded-t-md w-256 border-b-2 border-polar-0">
         <h2 className="font-bold text-xl">
-          {t("calculator.roof.roof sections")}:
+          {t("planner.roof.roof sections")}:
         </h2>
       </div>
       {sections.map((section, i) => (
@@ -140,11 +140,11 @@ const Calculator = () => {
           }}
         >
           <PlusIcon className="h-6 mr-1" />
-          {t("calculator.roof.add section")}
+          {t("planner.roof.add section")}
         </button>
       </div>
     </div>
   );
 };
 
-export default Calculator;
+export default planner;

@@ -1,9 +1,10 @@
 {
   "translation": {
+    "attribute photo": "{{platform}}の{{author}}による写真。",
     "home": {
       "welcome to": "{{name}}へようこそ。",
-      "tagline": "最先端のソーラーパネル計算機。",
-      "start": "計算を開始"
+      "tagline": "最先端のソーラーパネルプランナー。",
+      "start": "計画を開始する"
     },
     "404": {
       "not found": "ページが見つかりませ",
@@ -14,7 +15,7 @@
       "info": "TODO",
       "exit": "終了するには、任意の場所をクリックします."
     },
-    "calculator": {
+    "planner": {
       "project": {
         "title": "プロジェクトの設定",
         "latitude": "建物の緯度。",

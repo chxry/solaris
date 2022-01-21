@@ -1,7 +1,7 @@
 import Bar from "./Bar";
-import Calculator from "./Calculator";
+import Planner from "./Planner";
 import NotFound from "./404";
 import Input from "./Input";
 import Home from "./Home";
 
-export { Bar, Calculator, NotFound, Input, Home };
+export { Bar, Planner, NotFound, Input, Home };
