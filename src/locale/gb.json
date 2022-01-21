@@ -12,7 +12,7 @@
     },
     "calculator": {
       "latitude": "Latitude",
-      "latitude desc": "The latitude of the your building.",
+      "latitude desc": "The latitude of your building.",
       "shading": "Shading",
       "shading desc": "How much cover obstructs your roof."
     },
