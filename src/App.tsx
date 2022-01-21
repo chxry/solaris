@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { useTranslation } from "react-i18next";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Bar, Calculator, NotFound } from "./components";
+import { Bar, Calculator, NotFound,Home } from "./components";
 import "./locale";
 
 const App = () => {
@@ -17,9 +17,7 @@ const App = () => {
           <Routes>
             <Route
               path="/"
-              element={
-                <h1 className="m-4 text-2xl font-bold">{t("welcome")}</h1>
-              }
+              element={<Home />}
             />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="*" element={<NotFound />} />
