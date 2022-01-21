@@ -3,6 +3,7 @@
   
   ![License](https://img.shields.io/github/license/chxry/sun?style=flat-square)
   ![Version](https://img.shields.io/github/package-json/v/chxry/chxry.github.io?style=flat-square)
+  ![Contributors](https://img.shields.io/github/contributors/chxry/sun?style=flat-square)
 </h1>
 
 <h3 align="center">

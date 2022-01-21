@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Input } from ".";
 
 const Calculator = () => {
+  const { t } = useTranslation();
   const [sections, setSections] = useState([]);
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -10,9 +12,9 @@ const Calculator = () => {
   return (
     <div className="m-4">
       <Input
-        label="Latitude"
+        label={t("latitude")}
         unit="°"
-        desc="The latitude of the your building."
+        desc={t("latitude_desc")}
         value={latitude}
         onChange={(e) => {
           let n = parseFloat(e.target.value);
@@ -20,20 +22,20 @@ const Calculator = () => {
         }}
       />
       <Input
-        label="Shading"
+        label={t("shading")}
         unit="%"
-        desc="How much cover obstructs your roof."
+        desc={t("shading_desc")}
         value={shading}
         describe={() =>
           shading < 20
-            ? "Very little"
+            ? t("little")
             : shading < 60
-            ? "Modest"
+            ? t("modest")
             : shading < 80
-            ? "Significant"
+            ? t("significant")
             : shading !== 100
-            ? "Heavy"
-            : "Fully covered"
+            ? t("heavy")
+            : t("full")
         }
         onChange={(e) => {
           let n = parseFloat(e.target.value);

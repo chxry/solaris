@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { InformationCircleIcon } from "@heroicons/react/solid";
 
 import { NAME, VERSION } from "../config";
 
 const Bar = () => {
+  const { t } = useTranslation();
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -25,11 +27,11 @@ const Bar = () => {
           <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8">
             <span className="flex text-4xl font-bold">
               <InformationCircleIcon className="w-10 mr-2" />
-              <h1>About {NAME}</h1>
+              <h1>{t("about") + NAME}</h1>
             </span>
             <p>idk</p>
           </div>
-          <p>Click anywhere to exit.</p>
+          <p>{t("clicktoexit")}</p>
         </div>
       )}
     </>
