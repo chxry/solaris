@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "welcome": "owo",
+    "404": {
+      "not found": "ページが見つかりませ",
+      "go home": "帰る"
+    },
+    "about": {
+      "about": "ついて ",
+      "info": "TODO",
+      "exit": "終了するには、任意の場所をクリックします."
+    },
+    "calculator": {
+      "latitude": "緯度",
+      "latitude desc": "建物の緯度。",
+      "shading": "影",
+      "shading desc": "屋根の影の量。"
+    },
+    "adjs": {
+      "little": "ほとんどありません",
+      "modest": "適度",
+      "significant": "重要",
+      "heavy": "大量",
+      "full": "完全にカバー"
+    }
+  }
+}
