@@ -6,7 +6,7 @@ const Home = () => {
         <main>
             <div className="flex flex-row ">
                 <div className="basis-3/5">
-                    <img></img>
+                    <img src="" alt="solar panel"></img>
                 </div>
                 <div className="basis-2/5 pt-96 pr-20">
                     <h1 className=" text-6xl">Welcome to Solaris</h1>
