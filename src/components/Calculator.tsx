@@ -7,7 +7,8 @@ const Calculator = () => {
   const { t } = useTranslation();
   const [sections, setSections] = useState([]);
   const [latitude, setLatitude] = useState(0);
-  const [shading, setShading] = useState(20);
+  const [shading, setShading] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   return (
     <div className="m-4">
@@ -42,6 +43,17 @@ const Calculator = () => {
           n >= 0 && n <= 100 && setShading(n);
         }}
       />
+      <Input
+        label={t("calculator.direction")}
+        unit="°"
+        desc={t("calculator.direction desc")}
+        value={direction}
+        onChange={(e) => {
+          let n = parseFloat(e.target.value);
+          n >= 0 && n <= 360 && setDirection(n);
+        }}
+      />
+      
     </div>
   );
 };

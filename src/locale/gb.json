@@ -14,7 +14,9 @@
       "latitude": "Latitude",
       "latitude desc": "The latitude of your building.",
       "shading": "Shading",
-      "shading desc": "How much cover obstructs your roof."
+      "shading desc": "How much cover obstructs your roof.",
+      "direction": "Direction",
+      "direction desc": "What is the direction of your roof."
     },
     "adjs": {
       "little": "Very little",
