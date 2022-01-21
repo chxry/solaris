@@ -4,9 +4,17 @@ const Home = () => {
 
     return (
         <main>
-            <div>
-                <h1 className="text-right pr-40 pt-60 text-6xl">Welcome to Solaris</h1>
-                <h2 className="text-right pr-40 pt-1 text-2xl">The most efficient solar panel calculator</h2>
+            <div className="flex flex-row ">
+                <div className="basis-3/5">
+                    <img></img>
+                </div>
+                <div className="basis-2/5 pt-96 pr-20">
+                    <h1 className=" text-6xl">Welcome to Solaris</h1>
+                    <h2 className= "text-2xl pt-1">The most efficient solar panel calculator</h2>
+                    <button className="rounded-lg bg-frost-2 w-80 h-10 text-2xl hover:bg-frost-1 transition-colors "> Start Calculating </button>
+                </div>
+                
+                
 
             </div>
             
