@@ -1,6 +1,10 @@
 {
   "translation": {
-    "welcome": "owo",
+    "home": {
+      "welcome to": "{{name}}へようこそ。",
+      "tagline": "最先端のソーラーパネル計算機。",
+      "start": "計算を開始"
+    },
     "404": {
       "not found": "ページが見つかりませ",
       "go home": "帰る"

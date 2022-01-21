@@ -1,6 +1,10 @@
 {
   "translation": {
-    "welcome": "шваино карась",
+    "home": {
+      "welcome to": "TODO {{name}}",
+      "tagline": "TODO.",
+      "start": "TODO"
+    },
     "404": {
       "not found": "Страница не наидена",
       "go home": "Домой"

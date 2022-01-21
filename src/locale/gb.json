@@ -1,6 +1,10 @@
 {
   "translation": {
-    "welcome": "the worlds most advanced calculator",
+    "home": {
+      "welcome to": "Welcome to {{name}}",
+      "tagline": "The most advanced solar panel calculator.",
+      "start": "Start Calculating"
+    },
     "404": {
       "not found": "Page not found",
       "go home": "Go Home"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { TranslateIcon, InformationCircleIcon } from "@heroicons/react/solid";
 import { CircleFlag } from "react-circle-flags";
 
@@ -8,13 +9,19 @@ import { NAME, VERSION } from "../config";
 
 const Bar = () => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
 
   return (
     <>
       <div className="w-full p-2 bg-polar-0 text-xl flex">
-        <h1 className="font-bold mr-2">{NAME}</h1>
+        <a
+          className="font-bold mr-2 cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          {NAME}
+        </a>
         <span className="text-polar-3">v{VERSION}</span>
         <span className="flex ml-auto relative">
           {localeOpen && (
