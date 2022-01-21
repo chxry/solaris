@@ -60,7 +60,7 @@ const Bar = () => {
           <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8">
             <span className="flex text-4xl font-bold">
               <InformationCircleIcon className="w-10 mr-2" />
-              <h1>{t("about.about") + NAME}</h1>
+              <h1>{t("about.title") + NAME}</h1>
             </span>
             <p>{t("about.info")}</p>
           </div>

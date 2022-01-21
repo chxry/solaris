@@ -21,9 +21,9 @@ const Calculator = () => {
     <div className="m-4">
       <h1 className="text-2xl font-bold">{t("calculator.project.title")}:</h1>
       <Input
-        label={t("calculator.project.latitude")}
+        label={t("common.latitude")}
         unit="°"
-        desc={t("calculator.project.latitude desc")}
+        desc={t("calculator.project.latitude")}
         value={latitude}
         describe={() =>
           latitude > 0
@@ -38,9 +38,9 @@ const Calculator = () => {
         }}
       />
       <Input
-        label={t("calculator.project.shading")}
+        label={t("common.shading")}
         unit="%"
-        desc={t("calculator.project.shading desc")}
+        desc={t("calculator.project.shading")}
         value={shading}
         describe={() =>
           shading < 20
@@ -59,9 +59,9 @@ const Calculator = () => {
         }}
       />
       <Input
-        label={t("calculator.project.direction")}
+        label={t("common.direction")}
         unit="°"
-        desc={t("calculator.project.direction desc")}
+        desc={t("calculator.project.direction")}
         value={direction}
         describe={() => {
           let directions = [
@@ -83,7 +83,7 @@ const Calculator = () => {
       />
       <h1 className="text-2xl font-bold">{t("calculator.roof.title")}:</h1>
       <div className="bg-polar-3 p-2 rounded-t-md w-256 border-b-2 border-polar-0">
-        <h2 className="font-bold text-xl">Roof Sections:</h2>
+        <h2 className="font-bold text-xl">{t("calculator.roof.roof sections")}:</h2>
       </div>
       {sections.map((section, i) => (
         <div
@@ -91,17 +91,17 @@ const Calculator = () => {
           key={i}
         >
           <span className="font-bold">{i + 1}: </span>
-          <span className="font-bold">Dimensions: </span>
+          <span className="font-bold">{t("common.dimensions")}: </span>
           {section.width}×{section.height}mm
-          <span className="font-bold"> - Area:</span>
+          <span className="font-bold"> - {t("common.area")}:</span>
           {section.width * section.height}mm²
-          <span className="font-bold"> - Gradient: </span>
+          <span className="font-bold"> - {t("common.gradient")}: </span>
           {section.gradient}°
         </div>
       ))}
       <div className="flex w-256 bg-polar-3 p-2 rounded-b-md">
         <Input
-          label="Height"
+          label={t("common.width")}
           unit="mm"
           value={currentSection.width}
           onChange={(e) => {
@@ -110,7 +110,7 @@ const Calculator = () => {
           }}
         />
         <Input
-          label="Width"
+          label={t("common.height")}
           unit="mm"
           value={currentSection.height}
           onChange={(e) => {
@@ -120,7 +120,7 @@ const Calculator = () => {
           }}
         />
         <Input
-          label="Gradient"
+          label={t("common.gradient")}
           unit="°"
           value={currentSection.gradient}
           onChange={(e) => {
@@ -138,7 +138,7 @@ const Calculator = () => {
           }}
         >
           <PlusIcon className="h-6 mr-1" />
-          Add Section
+          {t("calculator.roof.add section")}
         </button>
       </div>
     </div>

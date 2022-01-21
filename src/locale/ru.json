@@ -6,17 +6,32 @@
       "go home": "Домой"
     },
     "about": {
-      "about": "Про",
+      "title": "Про",
       "info": "TODO",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "calculator": {
+      "project": {
+        "title": "TODO",
+        "latitude": "широта вашего здания.",
+        "shading": "насколько затенена ваша крыша.",
+        "direction": "на каком угле ваш дом."
+      },
+      "roof": {
+        "title": "TODO",
+        "roof sections": "TODO",
+        "add section": "TODO"
+      }
+    },
+    "common": {
       "latitude": "широта",
-      "latitude desc": "широта вашего здания.",
       "shading": "затенение",
-      "shading desc": "насколько затенена ваша крыша.",
       "direction": "Угол",
-      "direction desc": "на каком угле ваш дом."
+      "width": "TODO",
+      "height": "TODO",
+      "gradient": "TODO",
+      "dimensions": "TODO",
+      "area": "TODO"
     },
     "adjs": {
       "little": "очень мало",
@@ -24,6 +39,19 @@
       "significant": "значительное",
       "heavy": "Сильно Затемненоё",
       "full": "Полностью затёмнено"
+    },
+    "geo": {
+      "northern": "TODO",
+      "southern": "TODO",
+      "equator": "TODO",
+      "n": "TODO",
+      "ne": "TODO",
+      "e": "TODO",
+      "se": "TODO",
+      "s": "TODO",
+      "sw": "TODO",
+      "w": "TODO",
+      "nw": "TODO"
     }
   }
 }
