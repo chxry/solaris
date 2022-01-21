@@ -3,8 +3,8 @@
     "attribute photo": "TODO {{author}} {{platform}}.",
     "home": {
       "welcome to": "TODO {{name}}",
-      "tagline": "TODO.",
-      "start": "TODO"
+      "start": "TODO",
+      "why": "TODO {{name}}"
     },
     "404": {
       "not found": "Страница не наидена",
@@ -12,7 +12,6 @@
     },
     "about": {
       "title": "Про",
-      "info": "сука заткнись",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "planner": {
@@ -29,6 +28,7 @@
       }
     },
     "common": {
+      "tagline": "TODO.",
       "latitude": "широта",
       "shading": "затенение",
       "direction": "Угол",

@@ -3,8 +3,8 @@
     "attribute photo": "{{platform}}の{{author}}による写真。",
     "home": {
       "welcome to": "{{name}}へようこそ。",
-      "tagline": "最先端のソーラーパネルプランナー。",
-      "start": "計画を開始する"
+      "start": "計画を開始する",
+      "why": "なぜ{{name}}?"
     },
     "404": {
       "not found": "ページが見つかりませ",
@@ -12,7 +12,6 @@
     },
     "about": {
       "title": "ついて ",
-      "info": "TODO",
       "exit": "終了するには、任意の場所をクリックします."
     },
     "planner": {
@@ -29,6 +28,7 @@
       }
     },
     "common": {
+      "tagline": "最先端のソーラーパネルプランナー。",
       "latitude": "緯度",
       "shading": "影",
       "direction": "方向",

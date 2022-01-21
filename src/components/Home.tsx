@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { CalculatorIcon } from "@heroicons/react/solid";
 
 import { NAME } from "../config";
-import image from "../assets/image.jpg";
+import { Image } from ".";
+import image from "../assets/manny_becerra_unsplash.jpg";
+import lol from "../assets/jeremy_bezanger_unsplash.jpg";
 
 const Section = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex items-center justify-center p-12 pb-0">{children}</div>
+    <div className="flex items-center flex-wrap justify-center p-12 pb-0">
+      {children}
+    </div>
   );
 };
 
@@ -19,24 +23,17 @@ const Home = () => {
   return (
     <>
       <Section>
-        <div className="relative">
-          <img
-            src={image}
-            alt="solar panel on house"
-            className="h-96 mr-12 rounded-xl"
-          />
-          <p className="absolute bottom-0.5 left-1 text-sm opacity-50">
-            {t("attribute photo", {
-              author: "Manny Becerra",
-              platform: "Unsplash",
-            })}
-          </p>
-        </div>
+        <Image
+          src={image}
+          alt="row of solar panels"
+          author="Manny Becerra"
+          platform="Unsplash"
+        />
         <div>
           <h1 className="text-6xl font-bold">
             {t("home.welcome to", { name: NAME })}
           </h1>
-          <h2 className="text-2xl my-1">{t("home.tagline")}</h2>
+          <h2 className="text-2xl my-1">{t("common.tagline")}</h2>
           <button
             className="p-2 text-2xl font-bold rounded-lg bg-polar-0 transition-colors hover:bg-frost-2 flex items-center"
             onClick={() => navigate("/planner")}
@@ -48,12 +45,19 @@ const Home = () => {
       </Section>
       <Section>
         <div className="text-2xl">
-          <h1 className="text-5xl font-bold">Why Solaris?</h1>
-          <p>• Calculates the most panel positioning.</p>
-          <p>• Estimages costs over time.</p>
+          <h1 className="text-5xl font-bold">
+            {t("home.why", { name: NAME })}
+          </h1>
+          <p>• Calculates the most efficient panel positioning.</p>
+          <p>• Estimates costs over time.</p>
           <p>• Factors latitude, direction and more.</p>
         </div>
-        <div className="w-2/6"></div>
+        <Image
+          src={lol}
+          alt="houses with solar panels"
+          author="Jeremy Bezanger"
+          platform="Unsplash"
+        />
       </Section>
     </>
   );

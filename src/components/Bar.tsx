@@ -5,7 +5,7 @@ import { TranslateIcon, InformationCircleIcon } from "@heroicons/react/solid";
 import { CircleFlag } from "react-circle-flags";
 
 import { LANGS } from "../locale";
-import { NAME, VERSION } from "../config";
+import { NAME, VERSION, COPYRIGHT } from "../config";
 
 const Bar = () => {
   const { t, i18n } = useTranslation();
@@ -60,16 +60,20 @@ const Bar = () => {
       </div>
       {modalOpen && (
         <div
-          className="absolute w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center p-10"
+          className="fixed w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center z-50"
           onClick={() => setModalOpen(false)}
         >
           <br />
-          <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8">
+          <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8 relative">
             <span className="flex text-4xl font-bold">
               <InformationCircleIcon className="w-10 mr-2" />
               <h1>{t("about.title") + NAME}</h1>
             </span>
-            <p>{t("about.info")}</p>
+            <h2 className="text-xl">{t("common.tagline")}</h2>
+            <div className="absolute bottom-8">
+              <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
+              <p>{COPYRIGHT}</p>
+            </div>
           </div>
           <p>{t("about.exit")}</p>
         </div>

@@ -78,7 +78,7 @@ const planner = () => {
         }}
         onChange={(e) => {
           let n = parseFloat(e.target.value);
-          n >= 0 && n <= 360 && setDirection(n);
+          setDirection(n < 0 ? 360 : n % 360);
         }}
       />
       <h1 className="text-2xl font-bold">{t("planner.roof.title")}:</h1>

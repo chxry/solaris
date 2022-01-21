@@ -1,7 +1,8 @@
 import Bar from "./Bar";
+import Home from "./Home";
 import Planner from "./Planner";
 import NotFound from "./404";
 import Input from "./Input";
-import Home from "./Home";
+import Image from "./Image";
 
-export { Bar, Planner, NotFound, Input, Home };
+export { Bar, Home, Planner, NotFound, Input, Image };

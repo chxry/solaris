@@ -26,7 +26,7 @@ const App = () => {
   );
 };
 
-console.log(`${NAME} v${VERSION}\nReact ${React.version}`);
+console.log(`${NAME} v${VERSION} - React ${React.version}`);
 ReactDOM.render(
   <React.StrictMode>
     <App />

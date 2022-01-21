@@ -3,8 +3,8 @@
     "attribute photo": "Photo by {{author}} on {{platform}}.",
     "home": {
       "welcome to": "Welcome to {{name}}",
-      "tagline": "The most advanced solar panel planner.",
-      "start": "Start Planning"
+      "start": "Start Planning",
+      "why": "Why {{name}}?"
     },
     "404": {
       "not found": "Page not found",
@@ -12,7 +12,6 @@
     },
     "about": {
       "title": "About ",
-      "info": "TODO",
       "exit": "Click anywhere to exit."
     },
     "planner": {
@@ -29,6 +28,7 @@
       }
     },
     "common": {
+      "tagline": "The most advanced solar panel planner.",
       "latitude": "Latitude",
       "shading": "Shading",
       "direction": "Direction",
