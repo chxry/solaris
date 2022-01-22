@@ -19,4 +19,4 @@ about
 - [] 
 
 ### License
-**Solaris** under the [MIT License](license.md).
+**Solaris** is under the [MIT License](license.md).
