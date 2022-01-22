@@ -21,7 +21,9 @@
         "title": "Project Setup",
         "latitude": "The latitude of your building.",
         "shading": "How much cover obstructs your roof.",
-        "direction": "Direction of your roof."
+        "direction": "Direction of your roof.",
+        "energy usage": "How much energy your household consumes anually.",
+        "seg": "How much you are paid for 1kWh of excess electricity."
       },
       "roof": {
         "title": "Roof Setup",
@@ -38,6 +40,8 @@
       "latitude": "Latitude",
       "shading": "Shading",
       "direction": "Direction",
+      "energy usage": "Energy Usage",
+      "seg": "Smart Export Guarantee",
       "width": "Width",
       "height": "Height",
       "gradient": "Gradient",

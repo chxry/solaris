@@ -1,0 +1,11 @@
+{
+  "panels": [
+    {
+      "name": "2b",
+      "width": 1,
+      "height": 2,
+      "maxEnergy": 750,
+      "initialCost": 300
+    }
+  ]
+}

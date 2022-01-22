@@ -21,7 +21,9 @@
         "title": "Проект",
         "latitude": "широта вашего здания.",
         "shading": "насколько затенена ваша крыша.",
-        "direction": "на каком угле ваш дом."
+        "direction": "на каком угле ваш дом.",
+        "energy usage": "TODO.",
+        "seg": "TODO."
       },
       "roof": {
         "title": "сетап крыши",
@@ -38,6 +40,8 @@
       "latitude": "широта",
       "shading": "затенение",
       "direction": "Угол",
+      "energy usage": "TODO",
+      "seg": "TODO",
       "width": "ширина",
       "height": "высота",
       "gradient": "градиент",

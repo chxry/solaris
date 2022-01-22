@@ -21,7 +21,9 @@
         "title": "プロジェクトの設定",
         "latitude": "建物の緯度。",
         "shading": "屋根の影の量。",
-        "direction": "屋根の方向。"
+        "direction": "屋根の方向。",
+        "energy usage": "あなたの家庭が年間どのくらいのエネルギーを消費するか。",
+        "seg": "1kWhの余剰電力に対していくら支払われますか。"
       },
       "roof": {
         "title": "屋根のセットアップ",
@@ -38,6 +40,8 @@
       "latitude": "緯度",
       "shading": "影",
       "direction": "方向",
+      "energy usage": "エネルギー使用量",
+      "seg": "スマートな輸出保証",
       "width": "幅",
       "height": "高さ",
       "gradient": "勾配",

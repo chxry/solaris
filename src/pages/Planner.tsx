@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { PlusIcon, TrashIcon, ArrowSmRightIcon } from "@heroicons/react/solid";
 
 import { Input, Button } from "../components";
+import panels from "../assets/panels.json";
 
 enum Page {
   project,
@@ -16,13 +17,62 @@ const planner = () => {
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
   const [direction, setDirection] = useState(0);
-  const [sections, setSections] = useState([]);
+  const [seg, setSeg] = useState(5.5);
+  const [energyUsage, setEnergyUsage] = useState(3100);
   let sectionDefault = {
     width: 3,
-    height: 3,
+    height: 5,
     gradient: 30,
   };
+  const [sections, setSections] = useState([sectionDefault]);
   const [currentSection, setCurrentSection] = useState(sectionDefault);
+  const [currentPanel, setCurrentPanel] = useState(0);
+  const [overview, setOverview] = useState({
+    roofArea: 0,
+    panelCount: 0,
+    panelArea: 0,
+    spaceEfficiency: 0,
+    initialCost: 0,
+    efficiency: 0,
+    estimatedEnergy: 0,
+  });
+
+  useEffect(() => {
+    let panel = panels.panels[currentPanel];
+    let roofArea = 0;
+    sections.forEach((s) => (roofArea += s.height * s.width));
+
+    let panelCount = 0;
+    sections.forEach(
+      (s) =>
+        (panelCount +=
+          Math.floor(s.width / panel.width) *
+          Math.floor(s.height / panel.height))
+    );
+
+    let panelArea = panel.width * panel.height * panelCount;
+    let spaceEfficiency = (panelArea / roofArea) * 100;
+    let initialCost = panelCount * panel.initialCost;
+
+    let efficiency = Math.max(
+      90 -
+        shading -
+        Math.abs(latitude) / 2 -
+        Math.abs((latitude > 0 ? 180 : 0) - direction) / 8,
+      0
+    );
+    //todo use gradient
+    let estimatedEnergy = efficiency * panelCount * panel.maxEnergy;
+    setOverview({
+      roofArea,
+      panelCount,
+      panelArea,
+      spaceEfficiency,
+      initialCost,
+      efficiency,
+      estimatedEnergy,
+    });
+  }, [latitude, shading, direction, sections, currentPanel]);
 
   return (
     <>
@@ -110,6 +160,28 @@ const planner = () => {
                 setDirection(n < 0 ? 360 : n % 360);
               }}
             />
+            <Input
+              label={t("common.energy usage")}
+              unit="kWh"
+              desc={t("planner.project.energy usage")}
+              value={energyUsage}
+              describe={() => ""}
+              onChange={(e) => {
+                let n = parseFloat(e.target.value);
+                n >= 0 && setEnergyUsage(n);
+              }}
+            />
+            <Input
+              label={t("common.seg")}
+              unit="p"
+              desc={t("planner.project.seg")}
+              value={seg}
+              describe={() => ""}
+              onChange={(e) => {
+                let n = parseFloat(e.target.value);
+                n >= 0 && setSeg(n);
+              }}
+            />
           </>
         ) : page === Page.roof ? (
           <>
@@ -189,18 +261,20 @@ const planner = () => {
                 {t("planner.roof.add section")}
               </Button>
             </div>
-            <h2 className="my-1 text-xl">
-              {t("planner.roof.total")}:
-              {(() => {
-                let area = 0;
-                sections.forEach((s) => (area += s.height * s.width));
-                return " " + area;
-              })()}
-              m²
-            </h2>
+            <h2 className="my-1 text-xl">{`${t("planner.roof.total")}: ${
+              overview.roofArea
+            }m²`}</h2>
           </>
         ) : (
-          <h1>TODO</h1>
+          <>
+            <h2 className="text-2xl font-bold">Overview:</h2>
+            <p>{`Roof Area: ${overview.roofArea}`}</p>
+            <p>{`Panel Area: ${overview.panelArea} (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
+            <p>{`Initial Cost: £${overview.initialCost}`}</p>
+            <p>{`Estimated Energy: ${overview.estimatedEnergy / 1000}kW (${
+              overview.efficiency
+            }% efficiency)`}</p>
+          </>
         )}
         {page !== Page.panels && (
           <Button large onClick={() => setPage(page + 1)}>
