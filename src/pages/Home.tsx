@@ -5,14 +5,12 @@ import { CalculatorIcon } from "@heroicons/react/solid";
 
 import { NAME } from "../config";
 import { Image, Button } from "../components";
-import image from "../assets/manny_becerra_unsplash.jpg";
-import lol from "../assets/jeremy_bezanger_unsplash.jpg";
+import manny from "../assets/manny_becerra_unsplash.jpg";
+import jeremy from "../assets/jeremy_bezanger_unsplash.jpg";
 
 const Section = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex items-center flex-wrap justify-center p-12 pb-0">
-      {children}
-    </div>
+    <div className="flex items-center flex-wrap justify-center">{children}</div>
   );
 };
 
@@ -24,7 +22,7 @@ const Home = () => {
     <>
       <Section>
         <Image
-          src={image}
+          src={manny}
           alt="row of solar panels"
           author="Manny Becerra"
           platform="Unsplash"
@@ -41,16 +39,17 @@ const Home = () => {
         </div>
       </Section>
       <Section>
-        <div className="text-2xl">
+        <div className="text-2xl w-2/5">
           <h1 className="text-5xl font-bold">
-            {t("home.why", { name: NAME })}
+            {t("home.why.why", { name: NAME })}
           </h1>
-          <p>• Calculates the most efficient panel positioning.</p>
-          <p>• Estimates costs over time.</p>
-          <p>• Factors latitude, direction and more.</p>
+          <p>• {t("home.why.1")}</p>
+          <p>• {t("home.why.2")}</p>
+          <p>• {t("home.why.3")}</p>
+          <p>• {t("home.why.4")}</p>
         </div>
         <Image
-          src={lol}
+          src={jeremy}
           alt="houses with solar panels"
           author="Jeremy Bezanger"
           platform="Unsplash"

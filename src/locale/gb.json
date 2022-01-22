@@ -4,7 +4,13 @@
     "home": {
       "welcome to": "Welcome to {{name}}",
       "start": "Start Planning",
-      "why": "Why {{name}}?"
+      "why": {
+        "why": "Why {{name}}?",
+        "1": "Calculates the most efficient panel positioning.",
+        "2": "Estimates costs over time.",
+        "3": "Factors latitude, direction and more.",
+        "4": "100% free and easy to use."
+      }
     },
     "404": {
       "not found": "Page not found",
@@ -13,6 +19,7 @@
     "about": {
       "title": "About ",
       "repo": "View the repository on GitHub.",
+      "authors": "Made with <0></0> by {{authors}}.",
       "exit": "Click anywhere to exit."
     },
     "planner": {

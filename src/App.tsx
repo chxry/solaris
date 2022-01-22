@@ -12,7 +12,7 @@ const App = () => {
   const { t } = useTranslation();
 
   return (
-    <main className="w-screen h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
+    <main className="w-screen min-h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
       <BrowserRouter>
         <Bar />
         <Routes>

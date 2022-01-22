@@ -4,7 +4,13 @@
     "home": {
       "welcome to": "TODO {{name}}",
       "start": "TODO",
-      "why": "TODO {{name}}"
+      "why": {
+        "why": "TODO {{name}}?",
+        "1": "TODO.",
+        "2": "TODO.",
+        "3": "TODO.",
+        "4": "TODO."
+      }
     },
     "404": {
       "not found": "Страница не наидена",
@@ -13,6 +19,7 @@
     "about": {
       "title": "Про",
       "repo": "TODO.",
+      "authors": "<0></0> {{authors}} TODO.",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "planner": {

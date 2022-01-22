@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { TranslateIcon, InformationCircleIcon } from "@heroicons/react/solid";
+import {
+  TranslateIcon,
+  CogIcon,
+  InformationCircleIcon,
+  HeartIcon,
+} from "@heroicons/react/solid";
 import { CircleFlag } from "react-circle-flags";
 
 import { LANGS } from "../locale";
-import { NAME, VERSION, COPYRIGHT } from "../config";
+import { NAME, VERSION } from "../config";
 
 const Bar = () => {
   const { t, i18n } = useTranslation();
@@ -49,6 +54,7 @@ const Bar = () => {
             className="w-6 cursor-pointer transition-colors hover:text-frost-2"
             onClick={(e) => setLocaleOpen(!localeOpen)}
           />
+          <CogIcon className="w-6 transition-colors hover:text-polar-3" />
           <InformationCircleIcon
             className="w-6 cursor-pointer transition-colors hover:text-frost-2"
             onClick={() => setModalOpen(true)}
@@ -76,7 +82,14 @@ const Bar = () => {
             </a>
             <div className="absolute bottom-8">
               <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
-              <p>{COPYRIGHT}</p>
+              <p className="flex items-center whitespace-pre">
+                <Trans
+                  i18nKey="about.authors"
+                  values={{ authors: "Alex T, Gosha T & Luca E" }}
+                  t={t}
+                  components={[<HeartIcon className="h-5 text-red" />]}
+                />
+              </p>
             </div>
           </div>
           <p>{t("about.exit")}</p>
