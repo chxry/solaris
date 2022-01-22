@@ -19,6 +19,7 @@
     "about": {
       "title": "Про",
       "repo": "TODO.",
+      "made with": "TODO",
       "authors": "<0></0> {{authors}} TODO.",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },

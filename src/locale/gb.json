@@ -19,6 +19,8 @@
     "about": {
       "title": "About ",
       "repo": "View the repository on GitHub.",
+      "made with": "Made with",
+      "illustrations by": "Illustrations by <0></0>.",
       "authors": "Made with <0></0> by {{authors}}.",
       "exit": "Click anywhere to exit."
     },

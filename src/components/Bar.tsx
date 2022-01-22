@@ -10,13 +10,25 @@ import {
 import { CircleFlag } from "react-circle-flags";
 
 import { LANGS } from "../locale";
-import { NAME, VERSION } from "../config";
+import { NAME, VERSION, BUILTWITH } from "../config";
 
 const Bar = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
+
+  const Illust = () => {
+    return (
+      <a
+        className="underline cursor-pointer transition-colors hover:text-frost-2"
+        href="https://icons8.com/illustrations/author/60ed83d88abd3c77b41f4194"
+        target="_blank"
+      >
+        Olga Filatova
+      </a>
+    );
+  };
 
   return (
     <>
@@ -67,7 +79,7 @@ const Bar = () => {
           onClick={() => setModalOpen(false)}
         >
           <br />
-          <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8 relative">
+          <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8 relative flex flex-col">
             <span className="flex text-4xl font-bold">
               <InformationCircleIcon className="w-10 mr-2" />
               <h1>{t("about.title") + NAME}</h1>
@@ -80,6 +92,26 @@ const Bar = () => {
             >
               {t("about.repo")}
             </a>
+            <h2 className="text-xl font-bold">{t("about.made with")}:</h2>
+            {Object.keys(BUILTWITH).map((key) => (
+              <span className="text-xl" key={key}>
+                {"• "}
+                <a
+                  className="underline cursor-pointer transition-colors hover:text-frost-2"
+                  href={BUILTWITH[key]}
+                  target="_blank"
+                >
+                  {key}
+                </a>
+              </span>
+            ))}
+            <span className="text-xl">
+              <Trans
+                i18nKey="about.illustrations by"
+                t={t}
+                components={[<Illust />]}
+              />
+            </span>
             <div className="absolute bottom-8">
               <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
               <p className="flex items-center whitespace-pre">
