@@ -12,9 +12,11 @@
     },
     "about": {
       "title": "Про",
+      "repo": "TODO.",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "planner": {
+      "next step": "TODO",
       "project": {
         "title": "Проект",
         "latitude": "широта вашего здания.",
@@ -24,7 +26,11 @@
       "roof": {
         "title": "сетап крыши",
         "roof sections": "секцыи крыши",
-        "add section": "добавить секцию"
+        "add section": "добавить секцию",
+        "total": "TODO"
+      },
+      "panels": {
+        "title": "TODO"
       }
     },
     "common": {

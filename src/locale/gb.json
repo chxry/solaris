@@ -12,9 +12,11 @@
     },
     "about": {
       "title": "About ",
+      "repo": "View the repository on GitHub.",
       "exit": "Click anywhere to exit."
     },
     "planner": {
+      "next step": "Next Step",
       "project": {
         "title": "Project Setup",
         "latitude": "The latitude of your building.",
@@ -24,7 +26,11 @@
       "roof": {
         "title": "Roof Setup",
         "roof sections": "Roof Sections",
-        "add section": "Add Section"
+        "add section": "Add Section",
+        "total": "Total Area"
+      },
+      "panels": {
+        "title": "Select Panels and Overview"
       }
     },
     "common": {

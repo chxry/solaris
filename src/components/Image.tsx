@@ -17,7 +17,7 @@ const Image = ({
   return (
     <div className="relative mx-12">
       <img src={src} alt={alt} className="h-96 rounded-xl" />
-      <p className="absolute bottom-0.5 left-1 text-sm opacity-50">
+      <p className="absolute bottom-0 text-sm opacity-40 bg-black rounded-tr-xl rounded-bl-xl p-0.5">
         {t("attribute photo", {
           author,
           platform,

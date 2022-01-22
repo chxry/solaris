@@ -17,7 +17,7 @@ const Bar = () => {
     <>
       <div className="w-full p-2 bg-polar-0 text-xl flex">
         <a
-          className="font-bold mr-2 cursor-pointer"
+          className="font-bold mr-2 cursor-pointer transition-colors hover:text-frost-2"
           onClick={() => navigate("/")}
         >
           {NAME}
@@ -47,10 +47,7 @@ const Bar = () => {
           )}
           <TranslateIcon
             className="w-6 cursor-pointer transition-colors hover:text-frost-2"
-            onClick={(e) => {
-              e.stopPropagation();
-              setLocaleOpen(!localeOpen);
-            }}
+            onClick={(e) => setLocaleOpen(!localeOpen)}
           />
           <InformationCircleIcon
             className="w-6 cursor-pointer transition-colors hover:text-frost-2"
@@ -70,6 +67,13 @@ const Bar = () => {
               <h1>{t("about.title") + NAME}</h1>
             </span>
             <h2 className="text-xl">{t("common.tagline")}</h2>
+            <a
+              className="text-xl underline cursor-pointer transition-colors hover:text-frost-2"
+              href="https://github.com/chxry/solaris"
+              target="_blank"
+            >
+              {t("about.repo")}
+            </a>
             <div className="absolute bottom-8">
               <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
               <p>{COPYRIGHT}</p>

@@ -12,9 +12,11 @@
     },
     "about": {
       "title": "ついて ",
+      "repo": "GitHubでリポジトリを表示.",
       "exit": "終了するには、任意の場所をクリックします."
     },
     "planner": {
+      "next step": "次のステップ",
       "project": {
         "title": "プロジェクトの設定",
         "latitude": "建物の緯度。",
@@ -24,7 +26,11 @@
       "roof": {
         "title": "屋根のセットアップ",
         "roof sections": "屋根のセクション",
-        "add section": "セクションを追加"
+        "add section": "セクションを追加",
+        "total": "総面積"
+      },
+      "panels": {
+        "title": "パネルと概要を選択"
       }
     },
     "common": {

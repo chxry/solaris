@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CalculatorIcon } from "@heroicons/react/solid";
 
 import { NAME } from "../config";
-import { Image } from ".";
+import { Image, Button } from "../components";
 import image from "../assets/manny_becerra_unsplash.jpg";
 import lol from "../assets/jeremy_bezanger_unsplash.jpg";
 
@@ -34,13 +34,10 @@ const Home = () => {
             {t("home.welcome to", { name: NAME })}
           </h1>
           <h2 className="text-2xl my-1">{t("common.tagline")}</h2>
-          <button
-            className="p-2 text-2xl font-bold rounded-lg bg-polar-0 transition-colors hover:bg-frost-2 flex items-center"
-            onClick={() => navigate("/planner")}
-          >
+          <Button large onClick={() => navigate("/planner")}>
             <CalculatorIcon className="h-8 mr-2" />
             {t("home.start")}
-          </button>
+          </Button>
         </div>
       </Section>
       <Section>
