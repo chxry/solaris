@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "prod": "parcel build src/index.html",
+    "deploy": "push-dir --dir=dist --branch=gh-pages",
     "prettier": "prettier --write src"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "parcel": "^2.2.1",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
+    "push-dir": "^0.4.1",
     "tailwindcss": "^3.0.15"
   }
 }

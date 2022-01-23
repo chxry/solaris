@@ -7,7 +7,6 @@ import { NAME } from "../config";
 import { Image, Button } from "../components";
 import manny from "../assets/manny_becerra_unsplash.jpg";
 import jeremy from "../assets/jeremy_bezanger_unsplash.jpg";
-import goose from "../assets/nature_goose.png";
 
 const Section = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -56,7 +55,6 @@ const Home = () => {
           platform="Unsplash"
         />
       </Section>
-      <img src={goose} className="absolute bottom-0 right-0 w-72" />
     </>
   );
 };
