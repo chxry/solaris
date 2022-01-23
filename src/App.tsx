@@ -13,7 +13,9 @@ const App = () => {
 
   return (
     <main className="w-screen min-h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
-      <BrowserRouter>
+      <BrowserRouter
+        basename={process.env.NODE_ENV === "production" ? "solaris" : ""}
+      >
         <Bar />
         <Routes>
           <Route path="/" element={<Home />} />
