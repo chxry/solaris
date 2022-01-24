@@ -105,13 +105,6 @@ const Bar = () => {
                 </a>
               </span>
             ))}
-            <span className="text-xl">
-              <Trans
-                i18nKey="about.illustrations by"
-                t={t}
-                components={[<Illust />]}
-              />
-            </span>
             <div className="absolute bottom-8">
               <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
               <p className="flex items-center whitespace-pre">

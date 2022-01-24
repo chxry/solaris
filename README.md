@@ -20,4 +20,3 @@ about
 
 ### License
 **Solaris** is under the [MIT License](license.md).\
-Illustrations by [Olga Filatova](https://icons8.com/illustrations/author/60ed83d88abd3c77b41f4194).
