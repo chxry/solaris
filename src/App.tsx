@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Bar } from "./components";
 import { Planner, NotFound, Home } from "./pages";
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <main className="w-screen min-h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
-      <BrowserRouter
+      <HashRouter
         basename={process.env.NODE_ENV === "production" ? "solaris" : ""}
       >
         <Bar />
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/planner" element={<Planner />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </main>
   );
 };
