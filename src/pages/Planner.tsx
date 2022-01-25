@@ -76,14 +76,14 @@ const planner = () => {
 
   return (
     <>
-      <div className="w-full flex border-b-2 border-polar-0">
+      <div className="w-full flex flex-col md:flex-row md:border-b-2 border-polar-0">
         {Object.keys(Page).map(
           (p, i) =>
             isNaN(p as any) && (
               <button
                 key={p}
                 className={
-                  "p-4 border-r-2 border-polar-0 transition-colors hover:bg-frost-2" +
+                  "p-2 md:p-4 border-b-2 md:border-r-2 md:border-b-0 border-polar-0 transition-colors hover:bg-frost-2" +
                   (page === Page[p] ? " bg-polar-2" : "")
                 }
                 onClick={() => setPage(Page[p])}

@@ -18,18 +18,6 @@ const Bar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
 
-  const Illust = () => {
-    return (
-      <a
-        className="underline cursor-pointer transition-colors hover:text-frost-2"
-        href="https://icons8.com/illustrations/author/60ed83d88abd3c77b41f4194"
-        target="_blank"
-      >
-        Olga Filatova
-      </a>
-    );
-  };
-
   return (
     <>
       <div className="w-full p-2 bg-polar-0 text-xl flex">
@@ -42,7 +30,7 @@ const Bar = () => {
         <span className="text-polar-3">v{VERSION}</span>
         <span className="flex ml-auto relative">
           {localeOpen && (
-            <div className="absolute right-7 w-max top-7 bg-polar-0 rounded-md drop-shadow font-md">
+            <div className="absolute right-7 w-max top-7 bg-polar-0 rounded-md drop-shadow font-md z-40">
               {Object.keys(LANGS).map((lang) => (
                 <button
                   className={
@@ -75,7 +63,7 @@ const Bar = () => {
       </div>
       {modalOpen && (
         <div
-          className="fixed w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center z-50"
+          className="fixed w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 z-50"
           onClick={() => setModalOpen(false)}
         >
           <br />
@@ -84,17 +72,19 @@ const Bar = () => {
               <InformationCircleIcon className="w-10 mr-2" />
               <h1>{t("about.title") + NAME}</h1>
             </span>
-            <h2 className="text-xl">{t("common.tagline")}</h2>
+            <h2 className="text-lg md:text-xl">{t("common.tagline")}</h2>
             <a
-              className="text-xl underline cursor-pointer transition-colors hover:text-frost-2"
+              className="text-lg md:text-xl underline cursor-pointer transition-colors hover:text-frost-2"
               href="https://github.com/chxry/solaris"
               target="_blank"
             >
               {t("about.repo")}
             </a>
-            <h2 className="text-xl font-bold">{t("about.made with")}:</h2>
+            <h2 className="text-lg md:text-xl font-bold">
+              {t("about.made with")}:
+            </h2>
             {Object.keys(BUILTWITH).map((key) => (
-              <span className="text-xl" key={key}>
+              <span className="text-lg md:text-xl" key={key}>
                 {"• "}
                 <a
                   className="underline cursor-pointer transition-colors hover:text-frost-2"
@@ -105,7 +95,7 @@ const Bar = () => {
                 </a>
               </span>
             ))}
-            <div className="absolute bottom-8">
+            <div className="absolute bottom-8 text-sm md:text-md">
               <p>{`${NAME} v${VERSION} - React ${React.version}`}</p>
               <p className="flex items-center whitespace-pre">
                 <Trans
@@ -117,7 +107,7 @@ const Bar = () => {
               </p>
             </div>
           </div>
-          <p>{t("about.exit")}</p>
+          <p className="text-sm md:text-md">{t("about.exit")}</p>
         </div>
       )}
     </>

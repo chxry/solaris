@@ -14,8 +14,8 @@ const Button = ({
   return (
     <button
       className={
-        "rounded-md bg-polar-0 font-bold flex items-center transition-colors hover:bg-frost-2 " +
-        (large ? "p-2 text-2xl" : "p-1") +
+        "rounded-md bg-polar-0 font-bold flex items-center transition hover:bg-frost-2 hover:scale-[1.01]" +
+        (large ? " p-2 text-2xl" : " p-1") +
         (right ? " ml-auto" : "")
       }
       onClick={onClick}

@@ -1,9 +1,9 @@
 <h1 align="center">
   Solaris
 
-  ![License](https://img.shields.io/github/license/chxry/sun?style=flat-square)
-  ![Version](https://img.shields.io/github/package-json/v/chxry/chxry.github.io?style=flat-square)
-  ![Contributors](https://img.shields.io/github/contributors/chxry/sun?style=flat-square)
+  ![License](https://img.shields.io/github/license/chxry/solaris?style=flat-square)
+  ![Version](https://img.shields.io/github/package-json/v/chxry/solaris?style=flat-square)
+  ![Contributors](https://img.shields.io/github/contributors/chxry/solaris?style=flat-square)
 </h1>
 
 ### About
