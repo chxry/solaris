@@ -4,15 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { CalculatorIcon } from "@heroicons/react/solid";
 
 import { NAME } from "../config";
-import { Image, Button } from "../components";
-import manny from "../assets/manny_becerra_unsplash.jpg";
-import jeremy from "../assets/jeremy_bezanger_unsplash.jpg";
-
-const Section = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex items-center flex-wrap justify-center">{children}</div>
-  );
-};
+import { Button } from "../components";
+import markus from "../assets/markus-winkler-unsplash.jpg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -20,41 +13,34 @@ const Home = () => {
 
   return (
     <>
-      <Section>
-        <Image
-          src={manny}
-          alt="row of solar panels"
-          author="Manny Becerra"
-          platform="Unsplash"
-        />
-        <div>
-          <h1 className="text-6xl font-bold">
+      <div className="flex relative">
+        <img src={markus} className="flex-1 h-96 md:h-128 object-cover" />
+        <p className="absolute bottom-0 text-sm bg-black bg-opacity-40 rounded-tr-md p-0.5">
+          {t("attribute photo", {
+            author: "Markus Winkler",
+            platform: "Unsplash",
+          })}
+        </p>
+        <div className="absolute bottom-0 top-0 left-0 right-0 bg-black bg-opacity-50 p-8 md:p-32 space-y-1">
+          <h1 className="text-4xl md:text-7xl font-bold">
             {t("home.welcome to", { name: NAME })}
           </h1>
-          <h2 className="text-2xl my-1">{t("common.tagline")}</h2>
+          <h2 className="text-xl md:text-3xl">{t("common.tagline")}</h2>
           <Button large onClick={() => navigate("/planner")}>
             <CalculatorIcon className="h-8 mr-2" />
             {t("home.start")}
           </Button>
         </div>
-      </Section>
-      <Section>
-        <div className="text-2xl w-2/5">
-          <h1 className="text-5xl font-bold">
-            {t("home.why.why", { name: NAME })}
-          </h1>
-          <p>• {t("home.why.1")}</p>
-          <p>• {t("home.why.2")}</p>
-          <p>• {t("home.why.3")}</p>
-          <p>• {t("home.why.4")}</p>
-        </div>
-        <Image
-          src={jeremy}
-          alt="houses with solar panels"
-          author="Jeremy Bezanger"
-          platform="Unsplash"
-        />
-      </Section>
+      </div>
+      <div className="text-xl md:text-2xl m-4 md:m-12">
+        <h1 className="text-3xl md:text-4xl font-bold">
+          {t("home.why.why", { name: NAME })}
+        </h1>
+        <p>• {t("home.why.1")}</p>
+        <p>• {t("home.why.2")}</p>
+        <p>• {t("home.why.3")}</p>
+        <p>• {t("home.why.4")}</p>
+      </div>
     </>
   );
 };
