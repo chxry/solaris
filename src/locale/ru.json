@@ -2,7 +2,7 @@
   "translation": {
     "attribute photo": "TODO {{author}} {{platform}}.",
     "home": {
-      "welcome to": "TODO {{name}}",
+      "welcome to": "TODO {{name}}.",
       "start": "TODO",
       "why": {
         "why": "TODO {{name}}?",

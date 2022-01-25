@@ -2,7 +2,7 @@
   "translation": {
     "attribute photo": "Photo by {{author}} on {{platform}}.",
     "home": {
-      "welcome to": "Welcome to {{name}}",
+      "welcome to": "Welcome to {{name}}.",
       "start": "Start Planning",
       "why": {
         "why": "Why {{name}}?",

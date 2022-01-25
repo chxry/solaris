@@ -27,7 +27,8 @@ module.exports = {
         "black": "#000"
       },
       fontFamily: {
-        "body": ["JetBrains Mono", "sans-serif"],
+        "display": ["Poppins", "sans-serif"],
+        "body": ["Lato", "sans-serif"],
       },
       extend: {
         spacing: {

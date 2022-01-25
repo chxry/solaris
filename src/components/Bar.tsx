@@ -22,12 +22,14 @@ const Bar = () => {
     <>
       <div className="w-full p-2 bg-polar-0 text-xl flex">
         <a
-          className="font-bold mr-2 cursor-pointer transition-colors hover:text-frost-2"
+          className="font-display font-extrabold mr-2 cursor-pointer transition-colors hover:text-frost-2"
           onClick={() => navigate("/")}
         >
           {NAME}
         </a>
-        <span className="text-polar-3">v{VERSION}</span>
+        <span className="font-display font-extrabold text-polar-3">
+          v{VERSION}
+        </span>
         <span className="flex ml-auto relative">
           {localeOpen && (
             <div className="absolute right-7 w-max top-7 bg-polar-0 rounded-md drop-shadow font-md z-40">
@@ -68,7 +70,7 @@ const Bar = () => {
         >
           <br />
           <div className="w-full h-full md:w-192 md:h-128 bg-polar-0 rounded-xl p-8 relative flex flex-col">
-            <span className="flex text-4xl font-bold">
+            <span className="flex text-4xl font-display font-extrabold">
               <InformationCircleIcon className="w-10 mr-2" />
               <h1>{t("about.title") + NAME}</h1>
             </span>
