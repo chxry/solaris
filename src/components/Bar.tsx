@@ -102,7 +102,7 @@ const Bar = () => {
               <p className="flex items-center whitespace-pre">
                 <Trans
                   i18nKey="about.authors"
-                  values={{ authors: "Alex T, Gosha T & Luca E" }}
+                  values={{ authors: "Alex T, Gosha T, Luca E & Edward B" }}
                   t={t}
                   components={[<HeartIcon className="h-5 text-red" />]}
                 />
