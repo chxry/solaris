@@ -13,9 +13,7 @@ const App = () => {
 
   return (
     <main className="w-screen min-h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
-      <HashRouter
-        basename={process.env.NODE_ENV === "production" ? "solaris" : ""}
-      >
+      <HashRouter>
         <Bar />
         <Routes>
           <Route path="/" element={<Home />} />
