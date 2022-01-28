@@ -1,11 +1,53 @@
 {
   "panels": [
     {
-      "name": "2b",
+      "name": "konata",
+      "width": 1,
+      "height": 1.70,
+      "maxEnergy": 360,
+      "initialCost": 300
+    },
+    {
+      "name": "kagami",
       "width": 1,
       "height": 2,
-      "maxEnergy": 750,
-      "initialCost": 300
+      "maxEnergy": 400,
+      "initialCost": 350
+    },
+    {
+      "name": "tsukasa",
+      "width": 2.50,
+      "height": 5,
+      "maxEnergy": 1200,
+      "initialCost": 800
+    },
+    {
+      "name": "miyuki",
+      "width": 1,
+      "height": 1.45,
+      "maxEnergy": 500,
+      "initialCost": 1000
+    },
+    {
+      "name": "akira",
+      "width": 3,
+      "height": 4,
+      "maxEnergy": 1600,
+      "initialCost": 1500
+    },
+    {
+      "name": "nanako",
+      "width": 4,
+      "height": 9,
+      "maxEnergy": 4800,
+      "initialCost": 4500
+    },
+    {
+      "name": "yutaka",
+      "width": 16,
+      "height": 16,
+      "maxEnergy": 25500,
+      "initialCost": 23000
     }
   ]
 }
