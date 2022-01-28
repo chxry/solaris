@@ -44,6 +44,10 @@
         "title": "パネルと概要を選択",
         "panels": "TODO",
         "overview": "TODO",
+        "roof area": "TODO {{area}}",
+        "panel area": "TODO {{area}} <0>{{efficiency}}</0>",
+        "initial cost": "TODO £{{cost}}",
+        "estimated energy": "TODO {{energy}} {{efficiency}}",
         "error no sections": "TODO",
         "error no space": "TODO"
       }
@@ -63,6 +67,7 @@
       "price": "TODO"
     },
     "adjs": {
+      "none": "TODO",
       "little": "ほとんどありません",
       "modest": "適度",
       "significant": "重要",

@@ -44,6 +44,10 @@
         "title": "Select Panels and Overview",
         "panels": "Panels",
         "overview": "Overview",
+        "roof area": "Roof Area: {{area}}m²",
+        "panel area": "Panel Area: {{area}}m² ({{count}} panels, <0>{{efficiency}}% space efficiency</0>)",
+        "initial cost": "Initial Cost: £{{cost}}",
+        "estimated energy": "Estimated Energy: {{energy}}kW ({{efficiency}}% efficiency)",
         "error no sections": "No roof sections have been created yet.",
         "error no space": "No panels of this type are able to fit."
       }
@@ -63,6 +67,7 @@
       "price": "Price"
     },
     "adjs": {
+      "none": "None",
       "little": "Very little",
       "modest": "Modest",
       "significant": "Significant",

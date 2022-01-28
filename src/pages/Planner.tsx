@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   PlusIcon,
   TrashIcon,
@@ -90,7 +90,7 @@ const planner = () => {
       spaceEfficiency: truncate(spaceEfficiency),
       initialCost,
       efficiency: truncate(efficiency),
-      estimatedEnergy,
+      estimatedEnergy: truncate(efficiency),
     });
   }, [latitude, shading, direction, sections, currentPanel]);
 
@@ -142,7 +142,9 @@ const planner = () => {
               desc={t("planner.location.shading")}
               value={shading}
               describe={() =>
-                shading < 20
+                shading === 0
+                  ? t("adjs.none")
+                  : shading < 20
                   ? t("adjs.little")
                   : shading < 60
                   ? t("adjs.modest")
@@ -323,14 +325,49 @@ const planner = () => {
               </h2>
               {sections.length > 0 ? (
                 <>
-                  <p>{`Roof Area: ${overview.roofArea}m²`}</p>
+                  <p>
+                    {t("planner.overview.roof area", {
+                      area: overview.roofArea,
+                    })}
+                  </p>
                   {overview.panelCount > 0 ? (
                     <>
-                      <p>{`Panel Area: ${overview.panelArea}m² (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
-                      <p>{`Initial Cost: £${overview.initialCost}`}</p>
-                      <p>{`Estimated Energy: ${
-                        overview.estimatedEnergy / 1000
-                      }kW (${overview.efficiency}% efficiency)`}</p>
+                      <Trans
+                        i18nKey="planner.overview.panel area"
+                        values={{
+                          area: overview.panelArea,
+                          count: overview.panelCount,
+                          efficiency: overview.spaceEfficiency,
+                        }}
+                        t={t}
+                        components={[
+                          <span
+                            className={
+                              overview.spaceEfficiency < 65
+                                ? "text-red"
+                                : overview.spaceEfficiency < 85
+                                ? "text-yellow"
+                                : "text-green"
+                            }
+                          ></span>,
+                        ]}
+                      />
+                      <p>
+                        {t("planner.overview.initial cost", {
+                          cost: overview.initialCost,
+                        })}
+                      </p>
+                      <p>
+                        {t("planner.overview.initial cost", {
+                          cost: overview.initialCost,
+                        })}
+                      </p>
+                      <p>
+                        {t("planner.overview.estimated energy", {
+                          energy: overview.estimatedEnergy / 1000,
+                          efficiency: overview.efficiency,
+                        })}
+                      </p>
                     </>
                   ) : (
                     <Error msg={t("planner.overview.error no space")} />
