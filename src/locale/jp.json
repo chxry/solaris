@@ -25,21 +25,22 @@
     },
     "planner": {
       "next step": "次のステップ",
-      "project": {
-        "title": "プロジェクトの設定",
+      "location": {
+        "title": "TODO",
         "latitude": "建物の緯度。",
         "shading": "屋根の影の量。",
-        "direction": "屋根の方向。",
+        "direction": "屋根の方向。"
+      },
+      "finance": {
+        "title": "TODO",
         "energy usage": "あなたの家庭が年間どのくらいのエネルギーを消費するか。",
         "seg": "1kWhの余剰電力に対していくら支払われますか。"
       },
       "roof": {
-        "title": "屋根のセットアップ",
-        "roof sections": "屋根のセクション",
-        "add section": "セクションを追加",
-        "total": "総面積"
+        "title": "TODO",
+        "add section": "セクションを追加"
       },
-      "panels": {
+      "overview": {
         "title": "パネルと概要を選択"
       }
     },
@@ -54,7 +55,8 @@
       "height": "高さ",
       "gradient": "勾配",
       "dimensions": "寸法",
-      "area": "面積"
+      "area": "面積",
+      "price": "TODO"
     },
     "adjs": {
       "little": "ほとんどありません",

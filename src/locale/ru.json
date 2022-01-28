@@ -25,21 +25,22 @@
     },
     "planner": {
       "next step": "TODO",
-      "project": {
-        "title": "Проект",
+      "location": {
+        "title": "TODO",
         "latitude": "широта вашего здания.",
         "shading": "насколько затенена ваша крыша.",
-        "direction": "на каком угле ваш дом.",
+        "direction": "на каком угле ваш дом."
+      },
+      "finance": {
+        "title": "TODO",
         "energy usage": "TODO.",
         "seg": "TODO."
       },
       "roof": {
-        "title": "сетап крыши",
-        "roof sections": "секцыи крыши",
-        "add section": "добавить секцию",
-        "total": "TODO"
+        "title": "TODO",
+        "add section": "добавить секцию"
       },
-      "panels": {
+      "overview": {
         "title": "TODO"
       }
     },
@@ -54,7 +55,8 @@
       "height": "высота",
       "gradient": "градиент",
       "dimensions": "размеры",
-      "area": "плошадь"
+      "area": "плошадь",
+      "price": "TODO"
     },
     "adjs": {
       "little": "очень мало",

@@ -25,21 +25,22 @@
     },
     "planner": {
       "next step": "Next Step",
-      "project": {
-        "title": "Project Setup",
+      "location": {
+        "title": "Location Setup",
         "latitude": "The latitude of your building.",
         "shading": "How much cover obstructs your roof.",
-        "direction": "Direction of your roof.",
+        "direction": "Direction of your roof."
+      },
+      "finance": {
+        "title": "Finance Setup",
         "energy usage": "How much energy your household consumes anually.",
         "seg": "How much you are paid for 1kWh of excess electricity."
       },
       "roof": {
-        "title": "Roof Setup",
-        "roof sections": "Roof Sections",
-        "add section": "Add Section",
-        "total": "Total Area"
+        "title": "Roof Sections",
+        "add section": "Add Section"
       },
-      "panels": {
+      "overview": {
         "title": "Select Panels and Overview"
       }
     },
@@ -54,7 +55,8 @@
       "height": "Height",
       "gradient": "Gradient",
       "dimensions": "Dimensions",
-      "area": "Area"
+      "area": "Area",
+      "price": "Price"
     },
     "adjs": {
       "little": "Very little",

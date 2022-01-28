@@ -1,24 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { PlusIcon, TrashIcon, ArrowSmRightIcon } from "@heroicons/react/solid";
+import {
+  PlusIcon,
+  TrashIcon,
+  ArrowSmRightIcon,
+  ExclamationIcon,
+} from "@heroicons/react/solid";
 
 import { Input, Button } from "../components";
 import panels from "../assets/panels.json";
 
 enum Page {
-  project,
+  location,
+  finance,
   roof,
-  panels,
+  overview,
 }
+
+const Error = ({ msg }: { msg: string }) => {
+  return (
+    <span className="flex items-center text-red text-xl font-bold">
+      <ExclamationIcon className="h-8 mr-2" />
+      {msg}
+    </span>
+  );
+};
 
 const planner = () => {
   const { t } = useTranslation();
-  const [page, setPage] = useState(Page.project);
+  const [page, setPage] = useState(Page.roof);
+  // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
   const [direction, setDirection] = useState(0);
-  const [seg, setSeg] = useState(5.5);
+  // finance
   const [energyUsage, setEnergyUsage] = useState(3100);
+  const [seg, setSeg] = useState(5.5);
+  // roof
   let sectionDefault = {
     width: 3,
     height: 5,
@@ -26,6 +44,7 @@ const planner = () => {
   };
   const [sections, setSections] = useState([sectionDefault]);
   const [currentSection, setCurrentSection] = useState(sectionDefault);
+  // overview
   const [currentPanel, setCurrentPanel] = useState(0);
   const [overview, setOverview] = useState({
     roofArea: 0,
@@ -88,7 +107,7 @@ const planner = () => {
                 }
                 onClick={() => setPage(Page[p])}
               >
-                {i - 2}. {t("planner." + p + ".title")}
+                {i - 3}. {t("planner." + p + ".title")}
               </button>
             )
         )}
@@ -97,12 +116,12 @@ const planner = () => {
         <h1 className="text-4xl font-bold mb-2">
           {t("planner." + Page[page] + ".title")}:
         </h1>
-        {page === Page.project ? (
+        {page === Page.location ? (
           <>
             <Input
               label={t("common.latitude")}
               unit="°"
-              desc={t("planner.project.latitude")}
+              desc={t("planner.location.latitude")}
               value={latitude}
               describe={() =>
                 latitude > 0
@@ -119,7 +138,7 @@ const planner = () => {
             <Input
               label={t("common.shading")}
               unit="%"
-              desc={t("planner.project.shading")}
+              desc={t("planner.location.shading")}
               value={shading}
               describe={() =>
                 shading < 20
@@ -140,7 +159,7 @@ const planner = () => {
             <Input
               label={t("common.direction")}
               unit="°"
-              desc={t("planner.project.direction")}
+              desc={t("planner.location.direction")}
               value={direction}
               describe={() => {
                 let directions = [
@@ -160,10 +179,13 @@ const planner = () => {
                 setDirection(n < 0 ? 360 : n % 360);
               }}
             />
+          </>
+        ) : page === Page.finance ? (
+          <>
             <Input
               label={t("common.energy usage")}
               unit="kWh"
-              desc={t("planner.project.energy usage")}
+              desc={t("planner.finance.energy usage")}
               value={energyUsage}
               describe={() => ""}
               onChange={(e) => {
@@ -174,7 +196,7 @@ const planner = () => {
             <Input
               label={t("common.seg")}
               unit="p"
-              desc={t("planner.project.seg")}
+              desc={t("planner.finance.seg")}
               value={seg}
               describe={() => ""}
               onChange={(e) => {
@@ -184,24 +206,30 @@ const planner = () => {
             />
           </>
         ) : page === Page.roof ? (
-          <>
-            <div className="bg-polar-3 p-2 rounded-t-md w-256 border-b-2 border-polar-0">
-              <h2 className="font-bold text-xl">
-                {t("planner.roof.roof sections")}:
-              </h2>
-            </div>
+          <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1">
             {sections.map((section, i) => (
               <div
-                className="w-256 p-2 bg-polar-3 border-b-2 border-polar-0 text-lg flex items-center"
+                className="flex flex-wrap items-start md:items-center flex-col md:flex-row p-2 relative"
                 key={i}
               >
-                <span className="font-bold">{i + 1}: </span>
-                <span className="font-bold">{t("common.dimensions")}: </span>
-                {section.width}×{section.height}m
-                <span className="font-bold"> - {t("common.area")}:</span>
-                {section.width * section.height}m²
-                <span className="font-bold"> - {t("common.gradient")}: </span>
-                {section.gradient}°
+                <span>
+                  <span className="font-bold whitespace-pre">
+                    {i + 1 + " - " + t("common.dimensions")}:
+                  </span>
+                  {section.width}×{section.height}m
+                </span>
+                <span>
+                  <span className="font-bold whitespace-pre">
+                    {" - " + t("common.area")}:
+                  </span>
+                  {section.width * section.height}m²
+                </span>
+                <span>
+                  <span className="font-bold whitespace-pre">
+                    {" - " + t("common.gradient")}:
+                  </span>
+                  {section.gradient}°
+                </span>
                 <Button
                   right
                   onClick={() => {
@@ -215,7 +243,7 @@ const planner = () => {
                 </Button>
               </div>
             ))}
-            <div className="flex w-256 bg-polar-3 p-2 rounded-b-md">
+            <div className="flex flex-wrap items-start md:items-center flex-col md:flex-row p-2 relative space-y-1">
               <Input
                 label={t("common.width")}
                 unit="m"
@@ -261,22 +289,55 @@ const planner = () => {
                 {t("planner.roof.add section")}
               </Button>
             </div>
-            <h2 className="my-1 text-xl">{`${t("planner.roof.total")}: ${
-              overview.roofArea
-            }m²`}</h2>
-          </>
+          </div>
         ) : (
-          <>
-            <h2 className="text-2xl font-bold">Overview:</h2>
-            <p>{`Roof Area: ${overview.roofArea}`}</p>
-            <p>{`Panel Area: ${overview.panelArea} (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
-            <p>{`Initial Cost: £${overview.initialCost}`}</p>
-            <p>{`Estimated Energy: ${overview.estimatedEnergy / 1000}kW (${
-              overview.efficiency
-            }% efficiency)`}</p>
-          </>
+          <div className="flex flex-col lg:flex-row text-xl">
+            <div className="flex flex-wrap w-full lg:w-1/2 text-lg">
+              <h2 className="text-2xl font-bold w-full">Panels:</h2>
+              {panels.panels.map((panel, i) => (
+                <div
+                  key={i}
+                  className={
+                    "w-full m-2 lg:w-36 h-36 bg-polar-2 rounded-lg p-2 cursor-pointer transition hover:scale-105 hover:bg-frost-2" +
+                    (currentPanel === i ? " bg-polar-3" : "")
+                  }
+                  onClick={() => setCurrentPanel(i)}
+                >
+                  <h1 className="text-xl font-bold">{panel.name}</h1>
+                  <p>
+                    {t("common.area")}: {panel.width}×{panel.height}m
+                  </p>
+                  <p>
+                    {t("common.price")}: £{panel.initialCost}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="my-4 h-[2px] w-auto lg:my-0 lg:mx-4 lg:w-[2px] lg:h-auto bg-polar-0"></div>
+            <div>
+              <h2 className="text-2xl font-bold">Overview:</h2>
+              {sections.length > 0 ? (
+                <>
+                  <p>{`Roof Area: ${overview.roofArea}`}</p>
+                  {overview.panelCount > 0 ? (
+                    <>
+                      <p>{`Panel Area: ${overview.panelArea} (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
+                      <p>{`Initial Cost: £${overview.initialCost}`}</p>
+                      <p>{`Estimated Energy: ${
+                        overview.estimatedEnergy / 1000
+                      }kW (${overview.efficiency}% efficiency)`}</p>
+                    </>
+                  ) : (
+                    <Error msg="No panels of this type are able to fit." />
+                  )}
+                </>
+              ) : (
+                <Error msg="No panels have been created yet." />
+              )}
+            </div>
+          </div>
         )}
-        {page !== Page.panels && (
+        {page !== Page.overview && (
           <Button large onClick={() => setPage(page + 1)}>
             <ArrowSmRightIcon className="h-8 mr-1" />
             {t("planner.next step")}
