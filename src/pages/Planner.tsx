@@ -90,7 +90,7 @@ const planner = () => {
       spaceEfficiency: truncate(spaceEfficiency),
       initialCost,
       efficiency: truncate(efficiency),
-      estimatedEnergy: truncate(efficiency),
+      estimatedEnergy: truncate(estimatedEnergy),
     });
   }, [latitude, shading, direction, sections, currentPanel]);
 
@@ -364,7 +364,7 @@ const planner = () => {
                       </p>
                       <p>
                         {t("planner.overview.estimated energy", {
-                          energy: overview.estimatedEnergy / 1000,
+                          energy: overview.estimatedEnergy,
                           efficiency: overview.efficiency,
                         })}
                       </p>
