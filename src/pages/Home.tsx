@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { CalculatorIcon } from "@heroicons/react/solid";
 
-import { NAME } from "../config";
+import { NAME } from "../util";
 import { Button } from "../components";
 import markus from "../assets/markus-winkler-unsplash.jpg";
 

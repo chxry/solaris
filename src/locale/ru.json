@@ -41,7 +41,11 @@
         "add section": "добавить секцию"
       },
       "overview": {
-        "title": "TODO"
+        "title": "TODO",
+        "panels": "TODO",
+        "overview": "TODO",
+        "error no sections": "TODO",
+        "error no space": "TODO"
       }
     },
     "common": {

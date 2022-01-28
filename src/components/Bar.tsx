@@ -10,7 +10,7 @@ import {
 import { CircleFlag } from "react-circle-flags";
 
 import { LANGS } from "../locale";
-import { NAME, VERSION, BUILTWITH } from "../config";
+import { NAME, VERSION, BUILTWITH } from "../util";
 
 const Bar = () => {
   const { t, i18n } = useTranslation();

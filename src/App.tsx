@@ -5,7 +5,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Bar } from "./components";
 import { Planner, NotFound, Home } from "./pages";
-import { NAME, VERSION } from "./config";
+import { NAME, VERSION } from "./util";
 import "./locale";
 
 const App = () => {

@@ -41,7 +41,11 @@
         "add section": "Add Section"
       },
       "overview": {
-        "title": "Select Panels and Overview"
+        "title": "Select Panels and Overview",
+        "panels": "Panels",
+        "overview": "Overview",
+        "error no sections": "No roof sections have been created yet.",
+        "error no space": "No panels of this type are able to fit."
       }
     },
     "common": {

@@ -7,6 +7,7 @@ import {
   ExclamationIcon,
 } from "@heroicons/react/solid";
 
+import { truncate } from "../util";
 import { Input, Button } from "../components";
 import panels from "../assets/panels.json";
 
@@ -28,7 +29,7 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  const [page, setPage] = useState(Page.roof);
+  const [page, setPage] = useState(Page.location);
   // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -38,11 +39,11 @@ const planner = () => {
   const [seg, setSeg] = useState(5.5);
   // roof
   let sectionDefault = {
-    width: 3,
-    height: 5,
+    width: 1,
+    height: 1,
     gradient: 30,
   };
-  const [sections, setSections] = useState([sectionDefault]);
+  const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(sectionDefault);
   // overview
   const [currentPanel, setCurrentPanel] = useState(0);
@@ -85,10 +86,10 @@ const planner = () => {
     setOverview({
       roofArea,
       panelCount,
-      panelArea,
-      spaceEfficiency,
+      panelArea: truncate(panelArea),
+      spaceEfficiency: truncate(spaceEfficiency),
       initialCost,
-      efficiency,
+      efficiency: truncate(efficiency),
       estimatedEnergy,
     });
   }, [latitude, shading, direction, sections, currentPanel]);
@@ -293,7 +294,9 @@ const planner = () => {
         ) : (
           <div className="flex flex-col lg:flex-row text-xl">
             <div className="flex flex-wrap w-full lg:w-1/2 text-lg">
-              <h2 className="text-2xl font-bold w-full">Panels:</h2>
+              <h2 className="text-2xl font-bold w-full">
+                {t("planner.overview.panels")}:
+              </h2>
               {panels.panels.map((panel, i) => (
                 <div
                   key={i}
@@ -315,24 +318,26 @@ const planner = () => {
             </div>
             <div className="my-4 h-[2px] w-auto lg:my-0 lg:mx-4 lg:w-[2px] lg:h-auto bg-polar-0"></div>
             <div>
-              <h2 className="text-2xl font-bold">Overview:</h2>
+              <h2 className="text-2xl font-bold">
+                {t("planner.overview.overview")}:
+              </h2>
               {sections.length > 0 ? (
                 <>
-                  <p>{`Roof Area: ${overview.roofArea}`}</p>
+                  <p>{`Roof Area: ${overview.roofArea}m²`}</p>
                   {overview.panelCount > 0 ? (
                     <>
-                      <p>{`Panel Area: ${overview.panelArea} (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
+                      <p>{`Panel Area: ${overview.panelArea}m² (${overview.panelCount} panels, ${overview.spaceEfficiency}% space efficiency)`}</p>
                       <p>{`Initial Cost: £${overview.initialCost}`}</p>
                       <p>{`Estimated Energy: ${
                         overview.estimatedEnergy / 1000
                       }kW (${overview.efficiency}% efficiency)`}</p>
                     </>
                   ) : (
-                    <Error msg="No panels of this type are able to fit." />
+                    <Error msg={t("planner.overview.error no space")} />
                   )}
                 </>
               ) : (
-                <Error msg="No panels have been created yet." />
+                <Error msg={t("planner.overview.error no sections")} />
               )}
             </div>
           </div>

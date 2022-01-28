@@ -41,7 +41,11 @@
         "add section": "セクションを追加"
       },
       "overview": {
-        "title": "パネルと概要を選択"
+        "title": "パネルと概要を選択",
+        "panels": "TODO",
+        "overview": "TODO",
+        "error no sections": "TODO",
+        "error no space": "TODO"
       }
     },
     "common": {
