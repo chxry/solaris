@@ -85,7 +85,7 @@ const planner = () => {
       0
     );
     //todo use gradient + reminder convert p to £ + all money .tofixed
-    let estimatedEnergy = efficiency * panelCount * panel.maxEnergy;
+    let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
     let annualEnergy = estimatedEnergy * 8760;
     let profits = ((annualEnergy - energyUsage) * seg) / 100;
     setOverview({
