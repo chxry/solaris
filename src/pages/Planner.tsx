@@ -29,7 +29,6 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  
   const [page, setPage] = useState(Page.location);
   // location
   const [latitude, setLatitude] = useState(0);
