@@ -13,8 +13,8 @@
       }
     },
     "404": {
-      "not found": "Page not found",
-      "go home": "Go Home"
+      "not found": "Hmm, this page wasn't found",
+      "go home": "Return Home"
     },
     "about": {
       "title": "About ",
