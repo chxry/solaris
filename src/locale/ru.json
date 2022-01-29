@@ -1,15 +1,15 @@
 {
   "translation": {
-    "attribute photo": "TODO {{author}} {{platform}}.",
+    "attribute photo": "Фото зделано {{author}} на {{platform}}.",
     "home": {
-      "welcome to": "TODO {{name}}.",
-      "start": "TODO",
+      "welcome to": "Добро Пожаловаать {{name}}.",
+      "start": "Начинать",
       "why": {
-        "why": "TODO {{name}}?",
-        "1": "TODO.",
-        "2": "TODO.",
-        "3": "TODO.",
-        "4": "TODO."
+        "why": "Зачем {{name}}?",
+        "1": "Находит самое еффективное место для ваших солнечных панель.",
+        "2": "Оценивает расходы в будушем",
+        "3": "включает в калкуляцие широту углы и.т.д",
+        "4": "включает в калкуляцие широту углы и.т.д"
       }
     },
     "404": {
@@ -18,58 +18,58 @@
     },
     "about": {
       "title": "Про",
-      "repo": "TODO.",
-      "changelog": "TODO",
-      "made with": "TODO",
-      "authors": "<0></0> {{authors}} TODO.",
+      "repo": "Посмотрите код на гитхабе.",
+      "changelog": "Посмотрите старые версии.",
+      "made with": "Зделано используя ",
+      "authors": "Зделано используя <0></0> {{authors}}",
       "exit": "Щелкните в любом месте, чтобы выйти."
     },
     "planner": {
-      "next step": "TODO",
+      "next step": "Следуишяе",
       "location": {
-        "title": "TODO",
+        "title": "Сетап места",
         "latitude": "широта вашего здания.",
         "shading": "насколько затенена ваша крыша.",
         "direction": "на каком угле ваш дом."
       },
       "finance": {
-        "title": "TODO",
-        "energy usage": "TODO.",
-        "seg": "TODO."
+        "title": "Выбирайте солнечные панели",
+        "energy usage": "сколько електричества вы используете в год",
+        "seg": "сколько вам платят за 1kw/h електричества"
       },
       "roof": {
-        "title": "TODO",
+        "title": "выбираите солнечные панели",
         "add section": "добавить секцию"
       },
       "overview": {
-        "title": "TODO",
-        "panels": "TODO",
-        "overview": "TODO",
-        "roof area": "TODO {{area}}",
-        "panel area_one": "TODO {{area}} {{count}} <0>{{efficiency}}</0>",
-        "panel area_other": "TODO {{area}} {{count}} <0>{{efficiency}}</0>",
-        "initial cost": "TODO £{{cost}}",
-        "estimated energy": "TODO {{energy}} {{efficiency}}",
-        "error no sections": "TODO",
-        "error no space": "TODO"
+        "title": "выбираите солнечные панели и веши",
+        "panels": "Панели",
+        "overview": "ШваиноКарась",
+        "roof area": "Плошадь {{area}}",
+        "panel area_one": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
+        "panel area_other": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
+        "initial cost": "Начальная цена £{{cost}}",
+        "estimated energy": "Енергия {{energy}} {{efficiency}}",
+        "error no sections": "чтото случилось бля",
+        "error no space": "чтото случилось бля"
       }
     },
     "common": {
-      "tagline": "TODO.",
+      "tagline": "Самые умные в етом класе :)",
       "latitude": "широта",
       "shading": "затенение",
       "direction": "Угол",
-      "energy usage": "TODO",
-      "seg": "TODO",
+      "energy usage": "Енергия",
+      "seg": "сегс",
       "width": "ширина",
       "height": "высота",
       "gradient": "градиент",
       "dimensions": "размеры",
       "area": "плошадь",
-      "price": "TODO"
+      "price": " Цена"
     },
     "adjs": {
-      "none": "TODO",
+      "none": "Ничего ?",
       "little": "очень мало",
       "modest": "Средниё",
       "significant": "значительное",
