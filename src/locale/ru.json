@@ -50,26 +50,26 @@
         "panel area_other": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
         "initial cost": "Начальная цена £{{cost}}",
         "estimated energy": "Енергия {{energy}} {{efficiency}}",
-        "error no sections": "чтото случилось бля",
-        "error no space": "чтото случилось бля"
+        "error no sections": "Нету секции",
+        "error no space": "не достаточно места"
       }
     },
     "common": {
-      "tagline": "Самые умные в етом класе :)",
+      "tagline": "Самые умные в етом класе",
       "latitude": "широта",
       "shading": "затенение",
       "direction": "Угол",
       "energy usage": "Енергия",
-      "seg": "сегс",
+      "seg": "Умная експортная гарантия",
       "width": "ширина",
       "height": "высота",
       "gradient": "градиент",
       "dimensions": "размеры",
       "area": "плошадь",
-      "price": " Цена"
+      "price": "Цена"
     },
     "adjs": {
-      "none": "Ничего ?",
+      "none": "Ничего",
       "little": "очень мало",
       "modest": "Средниё",
       "significant": "значительное",
