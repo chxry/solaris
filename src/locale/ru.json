@@ -48,7 +48,7 @@
         "overview": "Обзор",
         "roof area": "Плошадь: {{area}}",
         "panel area_one": "Плошадь Панель: {{area}}m² ({{count}} Панель, <0>{{efficiency}}% Еффективность</0>)",
-        "panel area_other": "Плошадь Панелеи: {{area}}m² ({{count}} Панель, <0>{{efficiency}}% Еффективность</0>)",
+        "panel area_other": "Плошадь Панелеи: {{area}}m² ({{count}} Панелеи, <0>{{efficiency}}% Еффективность</0>)",
         "initial cost": "Начальная цена £{{cost}}",
         "estimated energy": "Енергия {{energy}} {{efficiency}}",
         "error no sections": "Нету секции",
