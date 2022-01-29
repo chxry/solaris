@@ -2,7 +2,7 @@
   "translation": {
     "attribute photo": "Фото зделано {{author}} на {{platform}}.",
     "home": {
-      "welcome to": "Добро Пожаловаать {{name}}.",
+      "welcome to": "Добро Пожаловать в {{name}}.",
       "start": "Начинать",
       "why": {
         "why": "Зачем {{name}}?",
@@ -46,8 +46,8 @@
         "panels": "Панели",
         "overview": "Обзор",
         "roof area": "Плошадь {{area}}",
-        "panel area_one": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
-        "panel area_other": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
+        "panel area_one": "Плошадь Панель: {{area}}m² ({{count}} Панель, <0>{{efficiency}}% Еффективность</0>)",
+        "panel area_other": "Плошадь Панель: {{area}}m² ({{count}} Панель, <0>{{efficiency}}% Еффективность</0>)",
         "initial cost": "Начальная цена £{{cost}}",
         "estimated energy": "Енергия {{energy}} {{efficiency}}",
         "error no sections": "Нету секции",
