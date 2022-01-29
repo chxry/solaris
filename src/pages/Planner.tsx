@@ -220,7 +220,7 @@ const planner = () => {
               describe={() => ""}
               onChange={(e) => {
                 let n = parseFloat(e.target.value);
-                n >= 0 && setEnergyUsage(n);
+                n >= 0 && setEnergyCost(n);
               }}
             />
             <Input
