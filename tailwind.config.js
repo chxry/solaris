@@ -26,7 +26,6 @@ module.exports = {
         "purple": "#B48EAD",
         "black": "#000"
       },
-      
       fontFamily: {
         "display": ["Poppins", "sans-serif"],
         "body": ["Lato", "sans-serif"],
@@ -38,7 +37,6 @@ module.exports = {
           "192": "48rem",
           "256": "64rem"
         }
-        
       }
     },
     plugins: [],

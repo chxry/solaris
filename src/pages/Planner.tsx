@@ -13,7 +13,7 @@ import panels from "../assets/panels.json";
 
 enum Page {
   location,
-  finance, 
+  finance,
   roof,
   overview,
 }
@@ -85,9 +85,9 @@ const planner = () => {
       0
     );
     //todo use gradient + reminder convert p to £ + all money .tofixed
-    let estimatedEnergy = efficiency * panelCount * panel.maxEnergy;
+    let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
     let annualEnergy = estimatedEnergy * 8760;
-    let profits = (annualEnergy-energyUsage)*seg/100;
+    let profits = ((annualEnergy - energyUsage) * seg) / 100;
     setOverview({
       roofArea,
       panelCount,
@@ -99,7 +99,16 @@ const planner = () => {
       profits,
       annualEnergy: truncate(annualEnergy),
     });
-  }, [latitude, shading, direction,energyUsage, energyCost, seg, sections, currentPanel]);
+  }, [
+    latitude,
+    shading,
+    direction,
+    energyUsage,
+    energyCost,
+    seg,
+    sections,
+    currentPanel,
+  ]);
 
   return (
     <>
@@ -225,7 +234,6 @@ const planner = () => {
                 n >= 0 && setSeg(n);
               }}
             />
-            
           </>
         ) : page === Page.roof ? (
           <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1">
