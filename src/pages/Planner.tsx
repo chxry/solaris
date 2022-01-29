@@ -13,7 +13,7 @@ import panels from "../assets/panels.json";
 
 enum Page {
   location,
-  finance,
+  finance, 
   roof,
   overview,
 }
@@ -225,6 +225,7 @@ const planner = () => {
                 n >= 0 && setSeg(n);
               }}
             />
+            
           </>
         ) : page === Page.roof ? (
           <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1">
