@@ -36,6 +36,7 @@ const planner = () => {
   const [direction, setDirection] = useState(0);
   // finance
   const [energyUsage, setEnergyUsage] = useState(3100);
+  const [energyCost, setEnergyCost] = useState(16);
   const [seg, setSeg] = useState(5.5);
   // roof
   let sectionDefault = {
@@ -55,6 +56,8 @@ const planner = () => {
     initialCost: 0,
     efficiency: 0,
     estimatedEnergy: 0,
+    profits: 0,
+    annualEnergy: 0,
   });
 
   useEffect(() => {
@@ -81,8 +84,10 @@ const planner = () => {
         Math.abs((latitude > 0 ? 180 : 0) - direction) / 8,
       0
     );
-    //todo use gradient
+    //todo use gradient + reminder convert p to £ + all money .tofixed
     let estimatedEnergy = efficiency * panelCount * panel.maxEnergy;
+    let annualEnergy = estimatedEnergy * 8760;
+    let profits = (annualEnergy-energyUsage)*seg/100;
     setOverview({
       roofArea,
       panelCount,
@@ -91,8 +96,10 @@ const planner = () => {
       initialCost,
       efficiency: truncate(efficiency),
       estimatedEnergy: truncate(estimatedEnergy),
+      profits,
+      annualEnergy: truncate(annualEnergy),
     });
-  }, [latitude, shading, direction, sections, currentPanel]);
+  }, [latitude, shading, direction,energyUsage, energyCost, seg, sections, currentPanel]);
 
   return (
     <>
@@ -190,6 +197,17 @@ const planner = () => {
               unit="kWh"
               desc={t("planner.finance.energy usage")}
               value={energyUsage}
+              describe={() => ""}
+              onChange={(e) => {
+                let n = parseFloat(e.target.value);
+                n >= 0 && setEnergyUsage(n);
+              }}
+            />
+            <Input
+              label={t("common.energy cost")}
+              unit="p"
+              desc={t("planner.finance.energy cost")}
+              value={energyCost}
               describe={() => ""}
               onChange={(e) => {
                 let n = parseFloat(e.target.value);
@@ -358,16 +376,13 @@ const planner = () => {
                         })}
                       </p>
                       <p>
-                        {t("planner.overview.initial cost", {
-                          cost: overview.initialCost,
-                        })}
-                      </p>
-                      <p>
                         {t("planner.overview.estimated energy", {
                           energy: overview.estimatedEnergy,
                           efficiency: overview.efficiency,
                         })}
                       </p>
+                      <p>Annual Energy: {overview.annualEnergy}kWh</p>
+                      <p>Profits: £{overview.profits.toFixed(2)}</p>
                     </>
                   ) : (
                     <Error msg={t("planner.overview.error no space")} />

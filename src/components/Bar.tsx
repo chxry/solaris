@@ -82,6 +82,13 @@ const Bar = () => {
             >
               {t("about.repo")}
             </a>
+            <a
+              className="text-lg md:text-xl underline cursor-pointer transition-colors hover:text-frost-2"
+              href="https://github.com/chxry/solaris/blob/master/changelog.md"
+              target="_blank"
+            >
+              {t("about.changelog")}
+            </a>
             <h2 className="text-lg md:text-xl font-bold">
               {t("about.made with")}:
             </h2>

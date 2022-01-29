@@ -19,6 +19,7 @@
     "about": {
       "title": "ついて ",
       "repo": "GitHubでリポジトリを表示.",
+      "changelog": "変更ログを表示します。",
       "made with": "で作った",
       "authors": "{{authors}}で<0></0>で作られました.",
       "exit": "終了するには、任意の場所をクリックします."
@@ -26,31 +27,31 @@
     "planner": {
       "next step": "次のステップ",
       "location": {
-        "title": "TODO",
+        "title": "場所の設定",
         "latitude": "建物の緯度。",
         "shading": "屋根の影の量。",
         "direction": "屋根の方向。"
       },
       "finance": {
-        "title": "TODO",
+        "title": "財務設定",
         "energy usage": "あなたの家庭が年間どのくらいのエネルギーを消費するか。",
+        "energy cost": "エネルギーの1kWhのコスト。",
         "seg": "1kWhの余剰電力に対していくら支払われますか。"
       },
       "roof": {
-        "title": "TODO",
+        "title": "屋根のセクション",
         "add section": "セクションを追加"
       },
       "overview": {
         "title": "パネルと概要を選択",
-        "panels": "TODO",
-        "overview": "TODO",
-        "roof area": "TODO {{area}}",
-        "panel area_one": "TODO {{area}} {{count}} <0>{{efficiency}}</0>",
-        "panel area_other": "TODO {{area}} {{count}} <0>{{efficiency}}</0>",
-        "initial cost": "TODO £{{cost}}",
-        "estimated energy": "TODO {{energy}} {{efficiency}}",
-        "error no sections": "TODO",
-        "error no space": "TODO"
+        "panels": "パネル",
+        "overview": "概要",
+        "roof area": "屋根面積: {{area}}m²",
+        "panel area": "パネル面積：5m²({{count}}パネル、<0>{{efficiency}}%スペース効率</0>)",
+        "initial cost": "初期費用: £{{cost}}",
+        "estimated energy": "推定エネルギー: {{energy}}kW（{{efficiency}}%効率）",
+        "error no sections": "屋根セクションはまだ作成されていません。",
+        "error no space": "このタイプのパネルは適合できません。"
       }
     },
     "common": {
@@ -59,16 +60,17 @@
       "shading": "影",
       "direction": "方向",
       "energy usage": "エネルギー使用量",
+      "energy cost": "エネルギーコスト",
       "seg": "スマートな輸出保証",
       "width": "幅",
       "height": "高さ",
       "gradient": "勾配",
       "dimensions": "寸法",
       "area": "面積",
-      "price": "TODO"
+      "price": "価格"
     },
     "adjs": {
-      "none": "TODO",
+      "none": "なし",
       "little": "ほとんどありません",
       "modest": "適度",
       "significant": "重要",

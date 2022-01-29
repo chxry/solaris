@@ -19,6 +19,7 @@
     "about": {
       "title": "About ",
       "repo": "View the repository on GitHub.",
+      "changelog": "View the changelog.",
       "made with": "Made with",
       "authors": "Made with <0></0> by {{authors}}.",
       "exit": "Click anywhere to exit."
@@ -33,7 +34,8 @@
       },
       "finance": {
         "title": "Finance Setup",
-        "energy usage": "How much energy your household consumes anually.",
+        "energy usage": "How much energy your household consumes annually.",
+        "energy cost": "Cost of 1kWh of energy.",
         "seg": "How much you are paid for 1kWh of excess electricity."
       },
       "roof": {
@@ -59,6 +61,7 @@
       "shading": "Shading",
       "direction": "Direction",
       "energy usage": "Energy Usage",
+      "energy cost": "Energy Cost",
       "seg": "Smart Export Guarantee",
       "width": "Width",
       "height": "Height",
