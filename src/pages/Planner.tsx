@@ -29,8 +29,8 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  // change it back once done to FUCKING RETARD PAGE.LOCATION
-  const [page, setPage] = useState(Page.finance);
+  
+  const [page, setPage] = useState(Page.location);
   // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -270,7 +270,7 @@ const planner = () => {
               </h1>
               <p className="text-lg">
                 You can usually find your energy cost on your energy suppliers
-                website.
+                website or on your energy bill.
               </p>
             </div>
           </div>
