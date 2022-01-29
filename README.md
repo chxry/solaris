@@ -8,7 +8,7 @@
 </div>
 
 ### About
-about
+This is a very terrible coding mostly made by alex and slightly by gosha and luca added a pizza and liek edwrad planend
 
 ### Built With
 - [React.js](https://reactjs.org)
