@@ -29,7 +29,8 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  const [page, setPage] = useState(Page.location);
+  // change it back once done to FUCKING RETARD PAGE.LOCATION
+  const [page, setPage] = useState(Page.finance);
   // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -200,41 +201,79 @@ const planner = () => {
             />
           </>
         ) : page === Page.finance ? (
-          <>
-            <Input
-              label={t("common.energy usage")}
-              unit="kWh"
-              desc={t("planner.finance.energy usage")}
-              value={energyUsage}
-              describe={() => ""}
-              onChange={(e) => {
-                let n = parseFloat(e.target.value);
-                n >= 0 && setEnergyUsage(n);
-              }}
-            />
-            <Input
-              label={t("common.energy cost")}
-              unit="p"
-              desc={t("planner.finance.energy cost")}
-              value={energyCost}
-              describe={() => ""}
-              onChange={(e) => {
-                let n = parseFloat(e.target.value);
-                n >= 0 && setEnergyCost(n);
-              }}
-            />
-            <Input
-              label={t("common.seg")}
-              unit="p"
-              desc={t("planner.finance.seg")}
-              value={seg}
-              describe={() => ""}
-              onChange={(e) => {
-                let n = parseFloat(e.target.value);
-                n >= 0 && setSeg(n);
-              }}
-            />
-          </>
+          <div className="flex flex-wrap items-start flex-col md:flex-row p-2 relative">
+            <div className="basis-4/12">
+              <Input
+                label={t("common.energy usage")}
+                unit="kWh"
+                desc={t("planner.finance.energy usage")}
+                value={energyUsage}
+                describe={() => ""}
+                onChange={(e) => {
+                  let n = parseFloat(e.target.value);
+                  n >= 0 && setEnergyUsage(n);
+                }}
+              />
+              <Input
+                label={t("common.energy cost")}
+                unit="p"
+                desc={t("planner.finance.energy cost")}
+                value={energyCost}
+                describe={() => ""}
+                onChange={(e) => {
+                  let n = parseFloat(e.target.value);
+                  n >= 0 && setEnergyCost(n);
+                }}
+              />
+              <Input
+                label={t("common.seg")}
+                unit="p"
+                desc={t("planner.finance.seg")}
+                value={seg}
+                describe={() => ""}
+                onChange={(e) => {
+                  let n = parseFloat(e.target.value);
+                  n >= 0 && setSeg(n);
+                }}
+              />
+            </div>
+            <div className="basis-4/12">
+              <h1 className="text-2xl font-bold">
+                What is the Smart Export Guarantee?
+              </h1>
+              <p className="text-lg">
+                The Smart Export Guarantee is a government mandated scheme that
+                provides a way for your excess solar energy to be exported to
+                the national grid and recieving payment from electricity
+                suppliers, Providing certain criteria have been met.{" "}
+              </p>
+              <h1 className="text-2xl font-bold pt-4">
+                What are the criteria?
+              </h1>
+              <p className="text-lg">
+                There are no requirements abou what kind of photovoltaic system
+                you need to be able to export the solar energy, as long as less
+                than 5Mw of electricity is generated. You do still need to
+                certify your solar installation through the MCS.
+              </p>
+              <h1 className="text-2xl font-bold pt-4">
+                How do i find my energy usage?
+              </h1>
+              <p className="text-lg">
+                You can find your energy usage on your energy suppliers annual
+                bill. Or if that is not an option you can look at your
+                daily/monthly usage on your energy meter and calculate the
+                amount in a year.
+              </p>
+              <h1 className="text-2xl font-bold pt-4">
+                How do I find my Energy Cost?
+              </h1>
+              <p className="text-lg">
+                You can usually find your energy cost on your energy suppliers
+                website.
+              </p>
+            </div>
+          </div>
         ) : page === Page.roof ? (
           <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1">
             {sections.map((section, i) => (
