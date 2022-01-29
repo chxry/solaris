@@ -1,49 +1,49 @@
 {
   "panels": [
     {
-      "name": "konata",
+      "name": "Rho",
       "width": 1,
       "height": 1.7,
       "maxEnergy": 0.36,
       "initialCost": 300
     },
     {
-      "name": "kagami",
+      "name": "Lambda",
       "width": 1,
       "height": 2,
       "maxEnergy": 0.4,
       "initialCost": 350
     },
     {
-      "name": "tsukasa",
+      "name": "Kappa",
       "width": 2.5,
       "height": 5,
       "maxEnergy": 1.2,
       "initialCost": 800
     },
     {
-      "name": "miyuki",
+      "name": "Upsilon",
       "width": 1,
       "height": 1.45,
       "maxEnergy": 0.5,
       "initialCost": 1000
     },
     {
-      "name": "akira",
+      "name": "Tao",
       "width": 3,
       "height": 4,
       "maxEnergy": 1.6,
       "initialCost": 1500
     },
     {
-      "name": "nanako",
+      "name": "Eta",
       "width": 4,
       "height": 9,
       "maxEnergy": 4.8,
       "initialCost": 4500
     },
     {
-      "name": "yutaka",
+      "name": "Iota",
       "width": 16,
       "height": 16,
       "maxEnergy": 25.5,
