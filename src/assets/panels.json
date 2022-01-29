@@ -1,49 +1,49 @@
 {
   "panels": [
     {
-      "name": "OX-1S Photovoltaic Panel",
+      "name": "konata",
       "width": 1,
       "height": 1.7,
       "maxEnergy": 0.36,
       "initialCost": 300
     },
     {
-      "name": "0X-2S Photovoltaic Panel",
+      "name": "kagami",
       "width": 1,
       "height": 2,
       "maxEnergy": 0.4,
       "initialCost": 350
     },
     {
-      "name": "0X-1M Photovoltaic Panel",
+      "name": "tsukasa",
       "width": 2.5,
       "height": 5,
       "maxEnergy": 1.2,
       "initialCost": 800
     },
     {
-      "name": "SP-S Photovoltaic Panel",
+      "name": "miyuki",
       "width": 1,
       "height": 1.45,
       "maxEnergy": 0.5,
       "initialCost": 1000
     },
     {
-      "name": "SP-M Photovoltaic Panel",
+      "name": "akira",
       "width": 3,
       "height": 4,
       "maxEnergy": 1.6,
       "initialCost": 1500
     },
     {
-      "name": "OX-STAT-L Photovoltaic Panel",
+      "name": "nanako",
       "width": 4,
       "height": 9,
       "maxEnergy": 4.8,
       "initialCost": 4500
     },
     {
-      "name": "OX-STAT-XL Photovoltaic Panel",
+      "name": "yutaka",
       "width": 16,
       "height": 16,
       "maxEnergy": 25.5,
