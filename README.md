@@ -8,7 +8,7 @@
 </div>
 
 ### About
-This is a very terrible coding mostly made by alex and slightly by gosha and luca added a pizza and liek edwrad planend
+Solaris is a solar panel efficiency calculator 2
 
 ### Built With
 - [React.js](https://reactjs.org)

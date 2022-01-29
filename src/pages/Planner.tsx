@@ -58,6 +58,8 @@ const planner = () => {
     estimatedEnergy: 0,
     profits: 0,
     annualEnergy: 0,
+    roiTime:0,
+    installCost:0
   });
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const planner = () => {
     let panelArea = panel.width * panel.height * panelCount;
     let spaceEfficiency = (panelArea / roofArea) * 100;
     let initialCost = panelCount * panel.initialCost;
-
+    let installCost = panel.installCost*panelCount;
     let efficiency = Math.max(
       90 -
         shading -
@@ -88,6 +90,7 @@ const planner = () => {
     let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
     let annualEnergy = estimatedEnergy * 8760;
     let profits = ((annualEnergy - energyUsage) * seg) / 100;
+    let roitime = (initialCost+installCost)/profits;
     setOverview({
       roofArea,
       panelCount,
@@ -98,6 +101,8 @@ const planner = () => {
       estimatedEnergy: truncate(estimatedEnergy),
       profits,
       annualEnergy: truncate(annualEnergy),
+      roiTime: truncate(roitime),
+      installCost: installCost,
     });
   }, [
     latitude,
@@ -422,6 +427,7 @@ const planner = () => {
                           cost: overview.initialCost,
                         })}
                       </p>
+                      <p>Labor Costs: £{overview.installCost}</p>
                       <p>
                         {t("planner.overview.estimated energy", {
                           energy: overview.estimatedEnergy,
@@ -429,7 +435,9 @@ const planner = () => {
                         })}
                       </p>
                       <p>Annual Energy: {overview.annualEnergy}kWh</p>
-                      <p>Profits: £{overview.profits.toFixed(2)}</p>
+                      <p>Annual Profits: £{overview.profits.toFixed(2)}</p>
+                      <p>Return on Investment: {overview.roiTime} Years</p>
+                      <h3 className="text-sm">Average labour costs may not reflect current work expenses</h3>
                     </>
                   ) : (
                     <Error msg={t("planner.overview.error no space")} />

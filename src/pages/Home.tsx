@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="flex relative">
-        <img src={markus} className="flex-1 h-96 md:h-128 object-cover" />
+        <img src={markus} className="flex-1 h-96 md:h-[33rem] object-cover" />
         <p className="absolute bottom-0 text-sm bg-black bg-opacity-40 rounded-tr-md p-0.5">
           {t("attribute photo", {
             author: "Markus Winkler",
