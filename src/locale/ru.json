@@ -44,7 +44,7 @@
       "overview": {
         "title": "выбираите солнечные панели и веши",
         "panels": "Панели",
-        "overview": "ШваиноКарась",
+        "overview": "Обзор",
         "roof area": "Плошадь {{area}}",
         "panel area_one": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
         "panel area_other": "Плошадь {{area}} {{count}} <0>{{efficiency}}</0>",
