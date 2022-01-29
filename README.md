@@ -8,7 +8,7 @@
 </div>
 
 ### About
-Solaris is a solar panel efficiency calculator 2
+Solaris is a solar panel efficiency calculator.
 
 ### Built With
 - [React.js](https://reactjs.org)
@@ -17,4 +17,4 @@ Solaris is a solar panel efficiency calculator 2
 - [i18next](https://www.i18next.com)
 
 ### License
-**Solaris** is under the [MIT License](license.md).\
+**Solaris** is under the [MIT License](license.md).

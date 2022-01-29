@@ -6,8 +6,7 @@
       "height": 1.7,
       "maxEnergy": 0.26,
       "initialCost": 300,
-      "installCost":30
-      
+      "installCost": 30
     },
     {
       "name": "CueSol CS38U-FG",
@@ -15,7 +14,7 @@
       "height": 2,
       "maxEnergy": 0.31,
       "initialCost": 315,
-      "installCost":30
+      "installCost": 30
     },
     {
       "name": "HET N12K SUMO",
@@ -23,7 +22,7 @@
       "height": 5,
       "maxEnergy": 2,
       "initialCost": 750,
-      "installCost":40
+      "installCost": 40
     },
     {
       "name": "HET N500 DENSE",
@@ -31,7 +30,7 @@
       "height": 1.45,
       "maxEnergy": 0.19,
       "initialCost": 280,
-      "installCost":30
+      "installCost": 30
     },
     {
       "name": "Solmodule Plus",
@@ -39,7 +38,7 @@
       "height": 4,
       "maxEnergy": 2.1,
       "initialCost": 850,
-      "installCost":40
+      "installCost": 40
     },
     {
       "name": "HiVM CS48M-L",
@@ -47,7 +46,7 @@
       "height": 9,
       "maxEnergy": 8.6,
       "initialCost": 1800,
-      "installCost":70
+      "installCost": 70
     },
     {
       "name": "Samson 45K-FGXL",
@@ -55,7 +54,7 @@
       "height": 16,
       "maxEnergy": 62,
       "initialCost": 3400,
-      "installCost":150
+      "installCost": 150
     }
   ]
 }

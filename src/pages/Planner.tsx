@@ -29,7 +29,7 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  const [page, setPage] = useState(Page.location);
+  const [page, setPage] = useState(Page.finance); //TODO
   // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -58,8 +58,8 @@ const planner = () => {
     estimatedEnergy: 0,
     profits: 0,
     annualEnergy: 0,
-    roiTime:0,
-    installCost:0
+    roiTime: 0,
+    installCost: 0,
   });
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const planner = () => {
     let panelArea = panel.width * panel.height * panelCount;
     let spaceEfficiency = (panelArea / roofArea) * 100;
     let initialCost = panelCount * panel.initialCost;
-    let installCost = panel.installCost*panelCount;
+    let installCost = panel.installCost * panelCount;
     let efficiency = Math.max(
       90 -
         shading -
@@ -90,7 +90,7 @@ const planner = () => {
     let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
     let annualEnergy = estimatedEnergy * 8760;
     let profits = ((annualEnergy - energyUsage) * seg) / 100;
-    let roitime = (initialCost+installCost)/profits;
+    let roitime = (initialCost + installCost) / profits;
     setOverview({
       roofArea,
       panelCount,
@@ -205,8 +205,8 @@ const planner = () => {
             />
           </>
         ) : page === Page.finance ? (
-          <div className="flex flex-wrap items-start flex-col md:flex-row p-2 relative">
-            <div className="basis-4/12">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-256">
               <Input
                 label={t("common.energy usage")}
                 unit="kWh"
@@ -241,40 +241,22 @@ const planner = () => {
                 }}
               />
             </div>
-            <div className="basis-4/12">
-              <h1 className="text-2xl font-bold">
-                What is the Smart Export Guarantee?
+            <div className="text-md">
+              <h1 className="text-xl font-bold">
+                What is Smart Export Guarantee?
               </h1>
-              <p className="text-lg">
-                The Smart Export Guarantee is a government mandated scheme that
+              <p>
+                Smart Export Guarantee is a government mandated scheme that
                 provides a way for your excess solar energy to be exported to
                 the national grid and recieving payment from electricity
-                suppliers, Providing certain criteria have been met.{" "}
+                suppliers.
               </p>
-              <h1 className="text-2xl font-bold pt-4">
-                What are the criteria?
+              <h1 className="text-xl font-bold pt-4">
+                How do I find my energy Cost/Usage?
               </h1>
-              <p className="text-lg">
-                There are no requirements abou what kind of photovoltaic system
-                you need to be able to export the solar energy, as long as less
-                than 5Mw of electricity is generated. You do still need to
-                certify your solar installation through the MCS.
-              </p>
-              <h1 className="text-2xl font-bold pt-4">
-                How do i find my energy usage?
-              </h1>
-              <p className="text-lg">
-                You can find your energy usage on your energy suppliers annual
-                bill. Or if that is not an option you can look at your
-                daily/monthly usage on your energy meter and calculate the
-                amount in a year.
-              </p>
-              <h1 className="text-2xl font-bold pt-4">
-                How do I find my Energy Cost?
-              </h1>
-              <p className="text-lg">
-                You can usually find your energy cost on your energy suppliers
-                website or on your energy bill.
+              <p>
+                This information is avaliable from your energy bills or
+                contacting your energy supplier.
               </p>
             </div>
           </div>
@@ -437,7 +419,10 @@ const planner = () => {
                       <p>Annual Energy: {overview.annualEnergy}kWh</p>
                       <p>Annual Profits: £{overview.profits.toFixed(2)}</p>
                       <p>Return on Investment: {overview.roiTime} Years</p>
-                      <h3 className="text-sm">Average labour costs may not reflect current work expenses</h3>
+                      <h3 className="text-sm">
+                        Average labour costs may not reflect current work
+                        expenses
+                      </h3>
                     </>
                   ) : (
                     <Error msg={t("planner.overview.error no space")} />
