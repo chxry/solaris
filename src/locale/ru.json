@@ -36,7 +36,11 @@
         "title": "Выбирайте солнечные панели",
         "energy usage": "сколько електричества вы используете в год",
         "energy cost": "Цена Енергий за 1kw/h",
-        "seg": "сколько вам платят за 1kw/h електричества"
+        "seg": "сколько вам платят за 1kw/h електричества",
+        "seg info": "TODO?",
+        "seg desc": "TODO.",
+        "energy info": "TODO?",
+        "energy desc": "TODO."
       },
       "roof": {
         "title": "выбираите солнечные панели",
@@ -51,6 +55,10 @@
         "panel area_other": "Плошадь Панелеи: {{area}}m² ({{count}} Панелеи, <0>{{efficiency}}% Еффективность</0>)",
         "initial cost": "Начальная цена £{{cost}}",
         "estimated energy": "Енергия {{energy}} {{efficiency}}",
+        "annual energy": "TODO: {{energy}}kWh",
+        "annual profits": "TODO: £{{profit}}",
+        "return on investment": "TODO: {{roi}} years",
+        "annual savings": "TODO: £{{saving}}",
         "error no sections": "Нету секции",
         "error no space": "не достаточно места"
       }

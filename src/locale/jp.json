@@ -36,7 +36,11 @@
         "title": "財務設定",
         "energy usage": "あなたの家庭が年間どのくらいのエネルギーを消費するか。",
         "energy cost": "エネルギーの1kWhのコスト。",
-        "seg": "1kWhの余剰電力に対していくら支払われますか。"
+        "seg": "1kWhの余剰電力に対していくら支払われますか。",
+        "seg info": "後で戻って確認",
+        "seg desc": "",
+        "energy info": "",
+        "energy desc": ""
       },
       "roof": {
         "title": "屋根のセクション",
@@ -50,6 +54,10 @@
         "panel area": "パネル面積：5m²({{count}}パネル、<0>{{efficiency}}%スペース効率</0>)",
         "initial cost": "初期費用: £{{cost}}",
         "estimated energy": "推定エネルギー: {{energy}}kW（{{efficiency}}%効率）",
+        "annual energy": "年間エネルギー: {{energy}}kWh",
+        "annual profits": "年間利益: £{{profit}}",
+        "return on investment": "投資収益率: {{roi}} years",
+        "annual savings": "年間節約: £{{saving}}",
         "error no sections": "屋根セクションはまだ作成されていません。",
         "error no space": "このタイプのパネルは適合できません。"
       }

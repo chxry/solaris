@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useTranslation } from "react-i18next";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Bar } from "./components";
@@ -9,8 +8,6 @@ import { NAME, VERSION } from "./util";
 import "./locale";
 
 const App = () => {
-  const { t } = useTranslation();
-
   return (
     <main className="w-screen min-h-screen flex flex-col bg-polar-1 text-snow-0 font-body">
       <HashRouter>

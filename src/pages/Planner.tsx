@@ -29,7 +29,7 @@ const Error = ({ msg }: { msg: string }) => {
 
 const planner = () => {
   const { t } = useTranslation();
-  const [page, setPage] = useState(Page.finance); //TODO
+  const [page, setPage] = useState(Page.location);
   // location
   const [latitude, setLatitude] = useState(0);
   const [shading, setShading] = useState(20);
@@ -77,7 +77,7 @@ const planner = () => {
 
     let panelArea = panel.width * panel.height * panelCount;
     let spaceEfficiency = (panelArea / roofArea) * 100;
-    let initialCost = panelCount * panel.initialCost;
+    let initialCost = panel.initialCost * panelCount;
     let installCost = panel.installCost * panelCount;
     let efficiency = Math.max(
       90 -
@@ -89,7 +89,11 @@ const planner = () => {
     //todo use gradient + reminder convert p to £ + all money .tofixed
     let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
     let annualEnergy = estimatedEnergy * 8760;
-    let profits = ((annualEnergy - energyUsage) * seg) / 100;
+    // if profits is negative that means savings
+    let profits =
+      annualEnergy > energyUsage
+        ? (annualEnergy - energyUsage) * seg
+        : (energyUsage - annualEnergy * energyCost) / 100;
     let roitime = (initialCost + installCost) / profits;
     setOverview({
       roofArea,
@@ -97,12 +101,12 @@ const planner = () => {
       panelArea: truncate(panelArea),
       spaceEfficiency: truncate(spaceEfficiency),
       initialCost,
+      installCost,
       efficiency: truncate(efficiency),
       estimatedEnergy: truncate(estimatedEnergy),
       profits,
       annualEnergy: truncate(annualEnergy),
       roiTime: truncate(roitime),
-      installCost: installCost,
     });
   }, [
     latitude,
@@ -243,21 +247,13 @@ const planner = () => {
             </div>
             <div className="text-md">
               <h1 className="text-xl font-bold">
-                What is Smart Export Guarantee?
+                {t("planner.finance.seg info")}
               </h1>
-              <p>
-                Smart Export Guarantee is a government mandated scheme that
-                provides a way for your excess solar energy to be exported to
-                the national grid and recieving payment from electricity
-                suppliers.
-              </p>
+              <p>{t("planner.finance.seg desc")}</p>
               <h1 className="text-xl font-bold pt-4">
-                How do I find my energy Cost/Usage?
+                {t("planner.finance.energy info")}
               </h1>
-              <p>
-                This information is avaliable from your energy bills or
-                contacting your energy supplier.
-              </p>
+              <p>{t("planner.finance.energy desc")}</p>
             </div>
           </div>
         ) : page === Page.roof ? (
@@ -416,13 +412,31 @@ const planner = () => {
                           efficiency: overview.efficiency,
                         })}
                       </p>
-                      <p>Annual Energy: {overview.annualEnergy}kWh</p>
-                      <p>Annual Profits: £{overview.profits.toFixed(2)}</p>
-                      <p>Return on Investment: {overview.roiTime} Years</p>
-                      <h3 className="text-sm">
-                        Average labour costs may not reflect current work
-                        expenses
-                      </h3>
+                      <p>
+                        {t("planner.overview.annual energy", {
+                          energy: overview.annualEnergy,
+                        })}
+                      </p>
+                      {overview.profits > 0 ? (
+                        <>
+                          <p>
+                            {t("planner.overview.annual profits", {
+                              profit: overview.profits.toFixed(2),
+                            })}
+                          </p>
+                          <p>
+                            {t("planner.overview.return on investment", {
+                              roi: overview.roiTime,
+                            })}
+                          </p>
+                        </>
+                      ) : (
+                        <p>
+                          {t("planner.overview.annual savings", {
+                            saving: -overview.profits.toFixed(2),
+                          })}
+                        </p>
+                      )}
                     </>
                   ) : (
                     <Error msg={t("planner.overview.error no space")} />

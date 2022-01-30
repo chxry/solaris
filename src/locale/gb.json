@@ -36,7 +36,11 @@
         "title": "Finance Setup",
         "energy usage": "How much energy your household consumes annually.",
         "energy cost": "Cost of 1kWh of energy.",
-        "seg": "How much you are paid for 1kWh of excess electricity."
+        "seg": "How much you are paid for 1kWh of excess electricity.",
+        "seg info": "What is Smart Export Guarantee?",
+        "seg desc": "Smart Export Guarantee is a government mandated scheme that provides a way for your excess solar energy to be exported to the national grid and recieving payment from electricity suppliers.",
+        "energy info": "How do I find my Energy Cost/Usage?",
+        "energy desc": "This information is avaliable from your energy bills or contacting your energy supplier."
       },
       "roof": {
         "title": "Roof Sections",
@@ -51,6 +55,10 @@
         "panel area_other": "Panel Area: {{area}}m² ({{count}} panels, <0>{{efficiency}}% space efficiency</0>)",
         "initial cost": "Initial Cost: £{{cost}}",
         "estimated energy": "Estimated Energy: {{energy}}kW ({{efficiency}}% efficiency)",
+        "annual energy": "Annual Energy: {{energy}}kWh",
+        "annual profits": "Annual Profits: £{{profit}}",
+        "return on investment": "Return on Investment: {{roi}} years",
+        "annual savings": "Annual Savings: £{{saving}}",
         "error no sections": "No roof sections have been created yet.",
         "error no space": "No panels of this type are able to fit."
       }
