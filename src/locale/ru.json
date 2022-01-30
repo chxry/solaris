@@ -37,10 +37,10 @@
         "energy usage": "сколько електричества вы используете в год",
         "energy cost": "Цена Енергий за 1kw/h",
         "seg": "сколько вам платят за 1kw/h електричества",
-        "seg info": "TODO?",
-        "seg desc": "TODO.",
-        "energy info": "TODO?",
-        "energy desc": "TODO."
+        "seg info": "Что Такое Умная Експортная Гарантия?",
+        "seg desc": "Умная Експортная Гарантия это умная схема заделана правительством чтобы вам платить бабки за ваше електричество.",
+        "energy info": "Как наитй сколько мне должны платить?",
+        "energy desc": "Твоя компания должна на вебсайте показывать или если нету посмотрите ваши платежи ну да."
       },
       "roof": {
         "title": "выбираите солнечные панели",
@@ -55,10 +55,10 @@
         "panel area_other": "Плошадь Панелеи: {{area}}m² ({{count}} Панелеи, <0>{{efficiency}}% Еффективность</0>)",
         "initial cost": "Начальная цена £{{cost}}",
         "estimated energy": "Енергия {{energy}} {{efficiency}}",
-        "annual energy": "TODO: {{energy}}kWh",
-        "annual profits": "TODO: £{{profit}}",
-        "return on investment": "TODO: {{roi}} years",
-        "annual savings": "TODO: £{{saving}}",
+        "annual energy": "Енергия в Год: {{energy}}kWh",
+        "annual profits": "Доход в Год: £{{profit}}",
+        "return on investment": "Время Денег Обратно: {{roi}} years",
+        "annual savings": "Зберегание В Год: £{{saving}}",
         "error no sections": "Нету секции",
         "error no space": "не достаточно места"
       }
