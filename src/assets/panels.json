@@ -4,7 +4,7 @@
       "name": "LJ GloW R 370W",
       "width": 1,
       "height": 1.7,
-      "maxEnergy": 0.26,
+      "maxEnergy": 0.325,
       "initialCost": 300,
       "installCost": 30
     },
@@ -12,7 +12,7 @@
       "name": "CueSol CS38U-FG",
       "width": 1,
       "height": 2,
-      "maxEnergy": 0.31,
+      "maxEnergy": 0.39,
       "initialCost": 315,
       "installCost": 30
     },
@@ -20,41 +20,41 @@
       "name": "HET N12K SUMO",
       "width": 2.5,
       "height": 5,
-      "maxEnergy": 2,
-      "initialCost": 750,
-      "installCost": 40
+      "maxEnergy": 2.4,
+      "initialCost": 1984,
+      "installCost": 180
     },
     {
       "name": "HET N500 DENSE",
       "width": 1,
       "height": 1.45,
-      "maxEnergy": 0.19,
-      "initialCost": 280,
+      "maxEnergy": 0.29,
+      "initialCost": 200,
       "installCost": 30
     },
     {
       "name": "Solmodule Plus",
       "width": 3,
       "height": 4,
-      "maxEnergy": 2.1,
-      "initialCost": 850,
-      "installCost": 40
+      "maxEnergy": 2.34,
+      "initialCost": 1900,
+      "installCost": 160
     },
     {
       "name": "HiVM CS48M-L",
       "width": 4,
       "height": 9,
-      "maxEnergy": 6,
+      "maxEnergy": 7.2,
       "initialCost": 5000,
-      "installCost": 70
+      "installCost": 540
     },
     {
       "name": "Samson 45K-FGXL",
       "width": 16,
       "height": 16,
-      "maxEnergy": 44,
+      "maxEnergy": 46,
       "initialCost": 35000,
-      "installCost": 150
+      "installCost": 1350
     }
   ]
 }
