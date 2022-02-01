@@ -9,4 +9,5 @@ export const BUILTWITH = {
   i18next: "https://www.i18next.com",
 };
 
-export const truncate = (n: number) => +n.toFixed(2);
+export const round = (n: number) => +n.toFixed(2);
+export const HOURSPERYEAR = 8760;

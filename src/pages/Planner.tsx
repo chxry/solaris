@@ -7,7 +7,7 @@ import {
   ExclamationIcon,
 } from "@heroicons/react/solid";
 
-import { truncate } from "../util";
+import { HOURSPERYEAR, round } from "../util";
 import { Input, Button } from "../components";
 import panels from "../assets/panels.json";
 
@@ -88,25 +88,25 @@ const planner = () => {
     );
     //todo use gradient + reminder convert p to £ + all money .tofixed
     let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
-    let annualEnergy = estimatedEnergy * 8760;
+    let annualEnergy = estimatedEnergy * HOURSPERYEAR;
     // if profits is negative that means savings
     let profits =
-      annualEnergy > energyUsage
+      (annualEnergy > energyUsage
         ? (annualEnergy - energyUsage) * seg
-        : (energyUsage - annualEnergy * energyCost) / 100;
+        : energyUsage - annualEnergy * energyCost) / 100;
     let roitime = (initialCost + installCost) / profits;
     setOverview({
       roofArea,
       panelCount,
-      panelArea: truncate(panelArea),
-      spaceEfficiency: truncate(spaceEfficiency),
+      panelArea: round(panelArea),
+      spaceEfficiency: round(spaceEfficiency),
       initialCost,
       installCost,
-      efficiency: truncate(efficiency),
-      estimatedEnergy: truncate(estimatedEnergy),
+      efficiency: round(efficiency),
+      estimatedEnergy: round(estimatedEnergy),
       profits,
-      annualEnergy: truncate(annualEnergy),
-      roiTime: truncate(roitime),
+      annualEnergy: round(annualEnergy),
+      roiTime: round(roitime),
     });
   }, [
     latitude,

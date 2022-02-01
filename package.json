@@ -1,13 +1,13 @@
 {
   "name": "Solaris",
-  "version": "0.9",
+  "version": "1.0",
   "repository": "https://github.com/chxry/sun",
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
     "prod": "parcel build src/index.html --public-url ./",
-    "deploy": "push-dir --dir=dist --branch=gh-pages",
-    "prettier": "prettier --write src"
+    "prettier": "prettier --write src",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
@@ -26,7 +26,6 @@
     "parcel": "^2.2.1",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
-    "push-dir": "^0.4.1",
     "tailwindcss": "^3.0.18"
   }
 }
