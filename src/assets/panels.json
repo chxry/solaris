@@ -44,8 +44,8 @@
       "name": "HiVM CS48M-L",
       "width": 4,
       "height": 9,
-      "maxEnergy": 8.6,
-      "initialCost": 1800,
+      "maxEnergy": 6,
+      "initialCost": 5000,
       "installCost": 70
     },
     {
