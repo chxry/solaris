@@ -52,8 +52,8 @@
       "name": "Samson 45K-FGXL",
       "width": 16,
       "height": 16,
-      "maxEnergy": 62,
-      "initialCost": 3400,
+      "maxEnergy": 44,
+      "initialCost": 4000,
       "installCost": 150
     }
   ]
