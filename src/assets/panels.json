@@ -53,7 +53,7 @@
       "width": 16,
       "height": 16,
       "maxEnergy": 44,
-      "initialCost": 4000,
+      "initialCost": 35000,
       "installCost": 150
     }
   ]
