@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { Bar } from "./components";
 import { Planner, NotFound, Home } from "./pages";
-import { NAME, VERSION } from "./util";
+import { NAME, VERSION, initFirebase } from "./util";
 import "./locale";
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
   );
 };
 
+initFirebase();
 console.log(
   `${NAME} v${VERSION} - React ${React.version} - ${process.env.NODE_ENV}`
 );
