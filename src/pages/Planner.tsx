@@ -351,7 +351,7 @@ const planner = () => {
                 <div
                   key={i}
                   className={
-                    "w-full m-2 lg:w-36 h-36 bg-polar-2 rounded-lg p-2 cursor-pointer transition hover:scale-105 hover:bg-frost-2" +
+                    "w-full m-2 lg:w-36 h-36 bg-polar-2 rounded-lg p-2 cursor-pointer transition hover:scale-105 hover:bg-frost-2 select-none" +
                     (currentPanel === i ? " bg-polar-3" : "")
                   }
                   onClick={() => setCurrentPanel(i)}

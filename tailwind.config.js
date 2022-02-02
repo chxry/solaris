@@ -37,6 +37,8 @@ module.exports = {
           "208": "52rem",
           "256": "64rem"
         },
+        
+        
       }
     },
     plugins: [],
