@@ -257,7 +257,7 @@ const planner = () => {
             </div>
           </div>
         ) : page === Page.roof ? (
-          <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1">
+          <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1 w-full md:w-208">
             {sections.map((section, i) => (
               <div
                 className="flex flex-wrap items-start md:items-center flex-col md:flex-row p-2 relative"
