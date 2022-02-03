@@ -27,6 +27,28 @@ const Error = ({ msg }: { msg: string }) => {
   );
 };
 
+const NavButton = ({
+  onClick,
+  selected,
+  children,
+}: {
+  onClick: () => void;
+  selected?: boolean;
+  children: React.ReactNode;
+}) => {
+  return (
+    <button
+      className={
+        "p-2 md:p-4 border-b-2 md:border-r-2 md:border-b-0 border-polar-0 transition-colors hover:bg-frost-2" +
+        (selected ? " bg-polar-2" : "")
+      }
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+
 const planner = () => {
   const { t } = useTranslation();
   const [page, setPage] = useState(Page.location);
@@ -122,19 +144,17 @@ const planner = () => {
   return (
     <>
       <div className="w-full flex flex-col md:flex-row md:border-b-2 border-polar-0">
+        <NavButton onClick={() => console.log("TODO")}>cum</NavButton>
         {Object.keys(Page).map(
           (p, i) =>
             isNaN(p as any) && (
-              <button
+              <NavButton
                 key={p}
-                className={
-                  "p-2 md:p-4 border-b-2 md:border-r-2 md:border-b-0 border-polar-0 transition-colors hover:bg-frost-2" +
-                  (page === Page[p] ? " bg-polar-2" : "")
-                }
+                selected={page === Page[p]}
                 onClick={() => setPage(Page[p])}
               >
                 {i - 3}. {t("planner." + p + ".title")}
-              </button>
+              </NavButton>
             )
         )}
       </div>
