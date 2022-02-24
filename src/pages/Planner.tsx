@@ -144,7 +144,6 @@ const planner = () => {
   return (
     <>
       <div className="w-full flex flex-col md:flex-row md:border-b-2 border-polar-0">
-        <NavButton onClick={() => console.log("TODO")}>cum</NavButton>
         {Object.keys(Page).map(
           (p, i) =>
             isNaN(p as any) && (
