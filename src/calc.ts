@@ -10,7 +10,7 @@ interface Info {
   sections: Section[];
 }
 
-export interface Section {
+interface Section {
   width: number;
   height: number;
 }

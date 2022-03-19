@@ -8,7 +8,7 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 
-import { Section, Overview, calculate } from "../calc";
+import { Overview, calculate } from "../calc";
 import { Input, Button } from "../components";
 import panels from "../assets/panels.json";
 
@@ -21,7 +21,7 @@ enum Page {
 
 const Error = ({ msg }: { msg: string }) => {
   return (
-    <span className="flex items-center text-red text-xl font-bold">
+    <span className="flex items-center text-red text-xl font-bold mb-2">
       <ExclamationIcon className="h-8 mr-2" />
       {msg}
     </span>
@@ -66,8 +66,7 @@ const planner = () => {
     width: 1,
     height: 1,
   };
-  const [sections, setSections] = useState<Section[]>([]);
-  const [currentSection, setCurrentSection] = useState(sectionDefault);
+  const [sections, setSections] = useState([sectionDefault]);
   // overview
   const [currentPanel, setCurrentPanel] = useState(0);
   const [bestPanel, setBestPanel] = useState(null);
@@ -230,70 +229,51 @@ const planner = () => {
             </div>
           </div>
         ) : page === Page.roof ? (
-          <div className="bg-polar-3 rounded-lg p-0 text-xl mb-2 divide-y-2 divide-polar-1 w-full md:w-208">
-            {sections.map((section, i) => (
-              <div
-                className="flex flex-wrap items-start md:items-center flex-col md:flex-row p-2 relative"
-                key={i}
-              >
-                <span>
-                  <span className="font-bold whitespace-pre">
-                    {i + 1 + " - " + t("common.dimensions")}:
-                  </span>
-                  {section.width}×{section.height}m
-                </span>
-                <span>
-                  <span className="font-bold whitespace-pre">
-                    {" - " + t("common.area")}:
-                  </span>
-                  {section.width * section.height}m²
-                </span>
-                <Button
-                  right
-                  onClick={() => {
-                    console.log(i);
-                    let arr = [...sections];
-                    arr.splice(i, 1);
-                    setSections(arr);
-                  }}
-                >
-                  <TrashIcon className="h-6" />
-                </Button>
-              </div>
-            ))}
-            <div className="flex flex-wrap items-start md:items-center flex-col md:flex-row p-2 relative space-y-1">
-              <Input
-                label={t("common.width")}
-                unit="m"
-                value={currentSection.width}
-                onChange={(e) => {
-                  let n = parseFloat(e.target.value);
-                  n > 0 &&
-                    setCurrentSection({ ...currentSection, ...{ width: n } });
-                }}
-              />
-              <Input
-                label={t("common.height")}
-                unit="m"
-                value={currentSection.height}
-                onChange={(e) => {
-                  let n = parseFloat(e.target.value);
-                  n > 0 &&
-                    setCurrentSection({ ...currentSection, ...{ height: n } });
-                }}
-              />
-              <Button
-                right
-                onClick={() => {
-                  setSections([...sections, currentSection]);
-                  setCurrentSection(sectionDefault);
-                }}
-              >
-                <PlusIcon className="h-6 mr-1" />
-                {t("planner.roof.add section")}
-              </Button>
+          sections.length > 0 ? (
+            <div className="mb-2 w-fit border-solid border-2 border-polar-0 divide-y-2 divide-polar-0 rounded-lg">
+              {sections.map((section, i) => (
+                <div className="flex p-2" key={i}>
+                  <Input
+                    label={t("common.width")}
+                    unit="m"
+                    value={sections[i].width}
+                    onChange={(e) => {
+                      let n = parseFloat(e.target.value);
+                      if (n > 0) {
+                        let s = [...sections];
+                        s[i].width = n;
+                        setSections(s);
+                      }
+                    }}
+                  />
+                  <Input
+                    label={t("common.height")}
+                    unit="m"
+                    value={sections[i].height}
+                    onChange={(e) => {
+                      let n = parseFloat(e.target.value);
+                      if (n > 0) {
+                        let s = [...sections];
+                        s[i].height = n;
+                        setSections(s);
+                      }
+                    }}
+                  />
+                  <Button
+                    onClick={() => {
+                      let arr = [...sections];
+                      arr.splice(i, 1);
+                      setSections(arr);
+                    }}
+                  >
+                    <TrashIcon className="h-6" />
+                  </Button>
+                </div>
+              ))}
             </div>
-          </div>
+          ) : (
+            <Error msg={t("planner.overview.error no sections")} />
+          )
         ) : (
           <div className="flex flex-col lg:flex-row text-xl">
             <div className="flex flex-wrap w-full lg:w-1/2 text-lg">
@@ -422,12 +402,25 @@ const planner = () => {
             </div>
           </div>
         )}
-        {page !== Page.overview && (
-          <Button large onClick={() => setPage(page + 1)}>
-            <ArrowSmRightIcon className="h-8 mr-1" />
-            {t("planner.next step")}
-          </Button>
-        )}
+        <div className="flex space-x-4">
+          {page === Page.roof && (
+            <Button
+              large
+              onClick={() => {
+                setSections([...sections, sectionDefault]);
+              }}
+            >
+              <PlusIcon className="h-6 mr-1" />
+              {t("planner.roof.add section")}
+            </Button>
+          )}
+          {page !== Page.overview && (
+            <Button large onClick={() => setPage(page + 1)}>
+              <ArrowSmRightIcon className="h-8 mr-1" />
+              {t("planner.next step")}
+            </Button>
+          )}
+        </div>
       </div>
     </>
   );
