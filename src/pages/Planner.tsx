@@ -5,9 +5,10 @@ import {
   TrashIcon,
   ArrowSmRightIcon,
   ExclamationIcon,
+  StarIcon,
 } from "@heroicons/react/solid";
 
-import { HOURSPERYEAR, round } from "../util";
+import { Section, Overview, calculate } from "../calc";
 import { Input, Button } from "../components";
 import panels from "../assets/panels.json";
 
@@ -64,82 +65,35 @@ const planner = () => {
   let sectionDefault = {
     width: 1,
     height: 1,
-    gradient: 30,
   };
-  const [sections, setSections] = useState([]);
+  const [sections, setSections] = useState<Section[]>([]);
   const [currentSection, setCurrentSection] = useState(sectionDefault);
   // overview
   const [currentPanel, setCurrentPanel] = useState(0);
-  const [overview, setOverview] = useState({
-    roofArea: 0,
-    panelCount: 0,
-    panelArea: 0,
-    spaceEfficiency: 0,
-    initialCost: 0,
-    efficiency: 0,
-    estimatedEnergy: 0,
-    profits: 0,
-    annualEnergy: 0,
-    roiTime: 0,
-    installCost: 0,
-  });
+  const [bestPanel, setBestPanel] = useState(null);
+  const [overviews, setOverviews] = useState<Overview[]>([]);
 
   useEffect(() => {
-    let panel = panels.panels[currentPanel];
-    let roofArea = 0;
-    sections.forEach((s) => (roofArea += s.height * s.width));
-
-    let panelCount = 0;
-    sections.forEach(
-      (s) =>
-        (panelCount +=
-          Math.floor(s.width / panel.width) *
-          Math.floor(s.height / panel.height))
-    );
-
-    let panelArea = panel.width * panel.height * panelCount;
-    let spaceEfficiency = (panelArea / roofArea) * 100;
-    let initialCost = panel.initialCost * panelCount;
-    let installCost = panel.installCost * panelCount;
-    let efficiency = Math.max(
-      90 -
-        shading -
-        Math.abs(latitude) / 2 -
-        Math.abs((latitude > 0 ? 180 : 0) - direction) / 8,
-      0
-    );
-    //todo use gradient + reminder convert p to £ + all money .tofixed
-    let estimatedEnergy = (efficiency / 100) * panelCount * panel.maxEnergy;
-    let annualEnergy = estimatedEnergy * HOURSPERYEAR;
-    // if profits is negative that means savings
-    let profits =
-      (annualEnergy > energyUsage
-        ? (annualEnergy - energyUsage) * seg
-        : energyUsage - annualEnergy * energyCost) / 100;
-    let roitime = (initialCost + installCost) / profits;
-    setOverview({
-      roofArea,
-      panelCount,
-      panelArea: round(panelArea),
-      spaceEfficiency: round(spaceEfficiency),
-      initialCost,
-      installCost,
-      efficiency: round(efficiency),
-      estimatedEnergy: round(estimatedEnergy),
-      profits,
-      annualEnergy: round(annualEnergy),
-      roiTime: round(roitime),
+    let info = {
+      latitude,
+      shading,
+      direction,
+      energyUsage,
+      energyCost,
+      seg,
+      sections,
+    };
+    let o = [...overviews];
+    let best = null;
+    panels.panels.forEach((panel, i) => {
+      o[i] = calculate(info, panel);
+      if (o[i].roiTime > 0) {
+        best = best ? (o[i].roiTime < o[best].roiTime ? i : best) : i;
+      }
     });
-  }, [
-    latitude,
-    shading,
-    direction,
-    energyUsage,
-    energyCost,
-    seg,
-    sections,
-    currentPanel,
-  ]);
+    setBestPanel(best);
+    setOverviews(o);
+  }, [latitude, shading, direction, energyUsage, energyCost, seg, sections]);
 
   return (
     <>
@@ -294,12 +248,6 @@ const planner = () => {
                   </span>
                   {section.width * section.height}m²
                 </span>
-                <span>
-                  <span className="font-bold whitespace-pre">
-                    {" - " + t("common.gradient")}:
-                  </span>
-                  {section.gradient}°
-                </span>
                 <Button
                   right
                   onClick={() => {
@@ -334,20 +282,6 @@ const planner = () => {
                     setCurrentSection({ ...currentSection, ...{ height: n } });
                 }}
               />
-              <Input
-                label={t("common.gradient")}
-                unit="°"
-                value={currentSection.gradient}
-                onChange={(e) => {
-                  let n = parseFloat(e.target.value);
-                  n >= 0 &&
-                    n <= 90 &&
-                    setCurrentSection({
-                      ...currentSection,
-                      ...{ gradient: n },
-                    });
-                }}
-              />
               <Button
                 right
                 onClick={() => {
@@ -370,11 +304,16 @@ const planner = () => {
                 <div
                   key={i}
                   className={
-                    "w-full m-2 lg:w-36 h-36 bg-polar-2 rounded-lg p-2 cursor-pointer transition hover:scale-105 hover:bg-frost-2 select-none" +
+                    "relative w-full m-2 lg:w-40 h-40 bg-polar-2 rounded-lg p-2 pr-6 cursor-pointer transition hover:scale-105 hover:bg-frost-2 select-none" +
                     (currentPanel === i ? " bg-polar-3" : "")
                   }
                   onClick={() => setCurrentPanel(i)}
                 >
+                  {i === bestPanel && (
+                    <div className="absolute top-0 right-0 bg-polar-3 text-yellow rounded-tr-lg rounded-bl-lg p-0.5">
+                      <StarIcon className="h-8" />
+                    </div>
+                  )}
                   <h1 className="text-xl font-bold">{panel.name}</h1>
                   <p>
                     {t("common.area")}: {panel.width}×{panel.height}m
@@ -394,26 +333,26 @@ const planner = () => {
                 <>
                   <p>
                     {t("planner.overview.roof area", {
-                      area: overview.roofArea,
+                      area: overviews[currentPanel].roofArea,
                     })}
                   </p>
-                  {overview.panelCount > 0 ? (
+                  {overviews[currentPanel].panelCount > 0 ? (
                     <>
                       <Trans
                         i18nKey="planner.overview.panel area"
                         values={{
-                          area: overview.panelArea,
-                          count: overview.panelCount,
-                          efficiency: overview.spaceEfficiency,
+                          area: overviews[currentPanel].panelArea,
+                          count: overviews[currentPanel].panelCount,
+                          efficiency: overviews[currentPanel].spaceEfficiency,
                         }}
                         t={t}
                         components={[
                           <span
                             className={
-                              overview.spaceEfficiency < 65
+                              overviews[currentPanel].spaceEfficiency < 65
                                 ? "text-red"
-                                : overview.spaceEfficiency < 85
-                                ? "text-yellow"
+                                : overviews[currentPanel].spaceEfficiency < 85
+                                ? "text-orange"
                                 : "text-green"
                             }
                           ></span>,
@@ -421,38 +360,54 @@ const planner = () => {
                       />
                       <p>
                         {t("planner.overview.initial cost", {
-                          cost: overview.initialCost,
+                          cost: overviews[currentPanel].initialCost,
                         })}
                       </p>
-                      <p>Labor Costs: £{overview.installCost}</p>
+                      <p>
+                        {t("planner.overview.labor cost", {
+                          cost: overviews[currentPanel].installCost,
+                        })}
+                      </p>
                       <p>
                         {t("planner.overview.estimated energy", {
-                          energy: overview.estimatedEnergy,
-                          efficiency: overview.efficiency,
+                          energy: overviews[currentPanel].estimatedEnergy,
+                          efficiency: overviews[currentPanel].efficiency,
                         })}
                       </p>
                       <p>
                         {t("planner.overview.annual energy", {
-                          energy: overview.annualEnergy,
+                          energy: overviews[currentPanel].annualEnergy,
                         })}
                       </p>
-                      {overview.profits > 0 ? (
+                      {overviews[currentPanel].profits > 0 ? (
                         <>
                           <p>
                             {t("planner.overview.annual profits", {
-                              profit: overview.profits.toFixed(2),
+                              profit:
+                                overviews[currentPanel].profits.toFixed(2),
                             })}
                           </p>
                           <p>
-                            {t("planner.overview.return on investment", {
-                              roi: overview.roiTime,
-                            })}
+                            <span className="flex">
+                              {t("planner.overview.return on investment", {
+                                roi: overviews[currentPanel].roiTime,
+                              })}
+                              {currentPanel === bestPanel && (
+                                <span className="text-yellow flex items-center">
+                                  (<StarIcon className="h-6" />
+                                  {t("planner.overview.fastest roi", {
+                                    roi: overviews[currentPanel].roiTime,
+                                  })}
+                                  )
+                                </span>
+                              )}
+                            </span>
                           </p>
                         </>
                       ) : (
                         <p>
                           {t("planner.overview.annual savings", {
-                            saving: -overview.profits.toFixed(2),
+                            saving: -overviews[currentPanel].profits.toFixed(2),
                           })}
                         </p>
                       )}

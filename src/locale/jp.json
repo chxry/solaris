@@ -53,10 +53,12 @@
         "roof area": "屋根面積: {{area}}m²",
         "panel area": "パネル面積：5m²({{count}}パネル、<0>{{efficiency}}%スペース効率</0>)",
         "initial cost": "初期費用: £{{cost}}",
+        "labor cost": "人件費: £{{cost}}",
         "estimated energy": "推定エネルギー: {{energy}}kW（{{efficiency}}%効率）",
         "annual energy": "年間エネルギー: {{energy}}kWh",
         "annual profits": "年間利益: £{{profit}}",
         "return on investment": "投資収益率: {{roi}} years",
+        "fastest roi": "最速の投資収益率",
         "annual savings": "年間節約: £{{saving}}",
         "error no sections": "屋根セクションはまだ作成されていません。",
         "error no space": "このタイプのパネルは適合できません。"

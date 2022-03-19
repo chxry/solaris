@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.1  - 19/03/2022
+- Show fastest return on investment.
 
 ## v1.0 - MVP - 01/02/2022
 - Added more Russian translations.
