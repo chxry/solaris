@@ -58,7 +58,7 @@
         "annual energy": "年間エネルギー: {{energy}}kWh",
         "annual profits": "年間利益: £{{profit}}",
         "return on investment": "投資収益率: {{roi}} years",
-        "fastest roi": "最速の投資収益率",
+        "best": "最高の年間利益",
         "annual savings": "年間節約: £{{saving}}",
         "error no sections": "屋根セクションはまだ作成されていません。",
         "error no space": "このタイプのパネルは適合できません。"

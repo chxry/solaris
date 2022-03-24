@@ -60,7 +60,7 @@
         "annual profits": "Доход в Год: £{{profit}}",
         "return on investment": "Время Денег Обратно: {{roi}} years",
         "annual savings": "Зберегание В Год: £{{saving}}",
-        "fastest roi": "самое быстрое время инвестиций",
+        "best": "лучшие денги",
         "error no sections": "Нету секции",
         "error no space": "не достаточно места"
       }

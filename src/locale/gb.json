@@ -59,7 +59,7 @@
         "annual energy": "Annual Energy: {{energy}}kWh",
         "annual profits": "Annual Profits: £{{profit}}",
         "return on investment": "Return on Investment: {{roi}} years",
-        "fastest roi": "Fastest return on investment",
+        "best": "Best annual profits",
         "annual savings": "Annual Savings: £{{saving}}",
         "error no sections": "No roof sections have been created yet.",
         "error no space": "No panels of this type are able to fit."

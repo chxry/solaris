@@ -86,8 +86,8 @@ const planner = () => {
     let best = null;
     panels.panels.forEach((panel, i) => {
       o[i] = calculate(info, panel);
-      if (o[i].roiTime > 0) {
-        best = best ? (o[i].roiTime < o[best].roiTime ? i : best) : i;
+      if (o[i].panelArea > 0) {
+        best = best ? (o[i].profits > o[best].profits ? i : best) : i;
       }
     });
     setBestPanel(best);
@@ -361,27 +361,22 @@ const planner = () => {
                       </p>
                       {overviews[currentPanel].profits > 0 ? (
                         <>
-                          <p>
+                          <p className="flex">
                             {t("planner.overview.annual profits", {
                               profit:
                                 overviews[currentPanel].profits.toFixed(2),
                             })}
+                            {currentPanel === bestPanel && (
+                              <span className="text-yellow flex items-center">
+                                (<StarIcon className="h-6" />
+                                {t("planner.overview.best")})
+                              </span>
+                            )}
                           </p>
                           <p>
-                            <span className="flex">
-                              {t("planner.overview.return on investment", {
-                                roi: overviews[currentPanel].roiTime,
-                              })}
-                              {currentPanel === bestPanel && (
-                                <span className="text-yellow flex items-center">
-                                  (<StarIcon className="h-6" />
-                                  {t("planner.overview.fastest roi", {
-                                    roi: overviews[currentPanel].roiTime,
-                                  })}
-                                  )
-                                </span>
-                              )}
-                            </span>
+                            {t("planner.overview.return on investment", {
+                              roi: overviews[currentPanel].roiTime,
+                            })}
                           </p>
                         </>
                       ) : (
